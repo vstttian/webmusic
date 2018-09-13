@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的主页</title>
+		<link rel="stylesheet" type="text/css" href="css/XiuGaiGeRen.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+		<script type="text/javascript" src="../js/jquery-1.9.1.min.js" ></script>
+		<script type="text/javascript" src="js/selectYearMonDay.js" ></script>
+		<script>
+
+		</script>
+	</head>
+	
+	<body>
+		<div class="g-bd ">
+			<div class="g-info">
+				<div class="u-title"><h3 class="f-ff2"><span >个人设置</span></h3></div>
+				<ul class="m-tabs">
+					<li class="fst"><a class="dd" href="" class="z-slt">基本设置</a></li>
+					<li><a href="">绑定设置</a></li>
+					<li><a href="">隐私设置</a></li>
+				</ul>
+				<form id="" method="" action="Http://www.baidu.com">
+					<div class="n-base f-cb">
+					<div class="frm m-frm">
+						<div class="itm">
+							<label class="lab">昵称：</label>
+							<input type="text" class="u-txt txt" value="Y_Tanh" id="nickname" maxlength="30">
+							<div class="u-err" style="display:none;" id="err"><i class="u-icn u-icn-25"></i><span>昵称已存在！</span></div>
+						</div>
+						<div class="itm f-cb">
+							<label class="lab">介绍：</label>
+							<div class="u-txtwrap f-pr">
+							<textarea class="u-txt area" id="signature"></textarea>
+							</div>
+						</div>
+						<div class="itm f-cb">
+							<label class="lab">性别：</label>
+							<div class="f-cb">
+							<label class="check"><input name="gender" type="radio" class="u-rdi" value="1"> 男</label>
+							<label class="check"><input name="gender" type="radio" class="u-rdi" value="2"> 女</label>
+							<label class="check"><input name="gender" type="radio" class="u-rdi" checked="" value="0"> 保密</label>
+							</div>
+						</div>
+						<div class="itm f-cb" style="z-index:11;">
+							<label class="lab">生日：</label>
+							<select id="nian" onclick="FillNian()"></select><span>年</span>
+							<select id="yue" onclick="FillYue()"></select><span>月</span>
+							<select id="tian" onclick="FillTian()"></select><span>日</span>
+						</div>
+						<div class="itm itm-1 f-cb" style="z-index:10;">
+							<label class="lab">地区：</label>
+							<div class="u-slt f-pr" id="pselect">
+							<span class="curr">广东省</span>
+							</div>
+							<div class="u-slt f-pr" id="cselect">
+							<span class="curr f-thide">肇庆市</span>
+							</div>
+						</div>
+						<div class="itm ft">
+						<button type="submit" class="btn btn-save btn-primary">保存</button>
+						<button type="reset" class="btn btn-clean btn-danger">清空</button>
+						</div>
+					</div>
+					<div class="avatar f-pr">
+						<img src="#" id="avatar">
+						<span class="btm"></span>
+						<a href="javascript:" class="upload" id="upload">更换头像</a>
+					</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+
+	</body> 
+</html>
