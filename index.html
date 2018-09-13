@@ -10,7 +10,7 @@
 
 
 </head>
-<body  style="background-color: #cfcfcf">
+<body  style="background-color:#f5f5f5">
 <header >
 
     <nav class="navbar navbar-inverse" style="height:70px">
@@ -18,17 +18,7 @@
             <div class="navbar-header"><!--导航栏按钮-->
 
                 <!--导航栏logo-->
-                <a class="navbar-brand"  style=" float: left;
-                      height: 44px;
-                      padding: 15px 15px;
-
-                      margin-left:300px ;
-                      font-size: 18px;
-                      line-height: 20px;
-                      background: url(img/logo.png);
-                      background-size: 180px 55px;
-                      text-indent: -5000px;
-                    width:180px;"
+                <a class="logo"  style=""
                    href="">Webmusic</a>
             </div>
             <div class="cpllapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -55,7 +45,7 @@
                 </li>
                 </ul>
                 <!--登陆后-->
-                <div class="m-tophead f-pr j-tflag"   style="display: block;margin:15px  300px 0 0px;">
+                <div class="m-tophead f-pr j-tflag"   style="display: block;margin:15px  300px 0 0px; z-index:999; ">
                     <div class="head f-fl f-pr myvia" id="myvia">
                         <img src="http://p1.music.126.net/y3PpxBSsVhEqYDtm4-RDUw==/528865129841813.jpg?param=30y30">
                     </div>
@@ -88,25 +78,28 @@
             </div>
         </div>
     </nav>
+
     <div  class="m-subnav" style="margin-top: -20px">
         <ul class="nav" style="margin:0 0 0 245px;">
-            <li><a hidefocus="true" data-module="discover" href="/discover" class="z-slt">推荐</a></li>
+            <li><a hidefocus="true" data-module="discover" href="index.html" class="z-slt">推荐</a></li>
             <li><a hidefocus="true" data-module="toplist" href="/discover/toplist">排行榜</a></li>
-            <li><a hidefocus="true" data-module="playlist" href="/discover/playlist">歌单</a></li>
+            <li><a hidefocus="true" data-module="playlist" href="allsonglist.html">歌单</a></li>
             <li><a hidefocus="true" data-module="djradio" href="/discover/djradio">主播电台</a></li>
             <li><a hidefocus="true" data-module="artist" href="/discover/artist">歌手</a></li>
             <li><a hidefocus="true" data-module="album" href="/discover/album">新碟上架</a></li>
         </ul></div>
 </header>
-<!--
-    作者：1172470050@qq.com
-    时间：2018-08-29
-    描述：图片轮播
--->
-<div style="margin: 0 400px 0 400px ;width: 980px; height: 1744px;background-color: #fcfdf8 ">
-    <div  style=" width: 980px; height: 1000px; padding: 40px 40px 40px 40px;border:solid;border-width: 0 1px 0 1px;border-color: #d3d3d3 ">
 
-<div id="myCarousel" class="carousel slide" style="margin-top:50px">
+
+<!--
+作者：1172470050@qq.com
+时间：2018-08-29
+描述：图片轮播层
+-->
+<div style="background-color: #4e5052">
+<div style="margin: 0 auto 0 auto ;width: 980px; height:auto;background-color: #4e5052 ">
+    <div  style=" width: 980px; height: auto; padding: 20px 0 0 0; ">
+    <div id="myCarousel" class="carousel slide" style="margin-top:30px">
 
     <!-- 轮播（Carousel）指标 -->
     <ol class="carousel-indicators">
@@ -146,22 +139,233 @@
     </a>
 </div>
     </div>
+</div>
+</div>
+<!--中间层-->
+<div style="margin: 0 auto 0 auto ;width: 980px; height:auto;background-color: #fcfdf8 ">
+    <div  style=" width: 980px; height: 999px; padding: 20px 0 0 0;border:solid;border-width: 0 1px 0 1px;border-color: #d3d3d3 ">
+
+
+        <div class="pull-left" style="width: 727px;height: 100%;padding: 20px 20px 40px 20px; border:solid;border-width: 0 1px 0 0;border-color: #d3d3d3">
+
+            <div class="v-hd2">
+              <img class="pull-left" src="img/logo1.jpg">  <a class="pull-left" href="allsonglist.html"  style="font-size: 20px;color: #0f0f0f">热门推荐</a>
+                <div class=" pull-left">
+                    <p class="" style="margin: 7px 0 0 20px">
+                        <a class="p_a" href="#" >华语</a>
+                        <span class="line">|</span>
+                        <a class="p_a">流行</a>
+                        <span class="line">|</span>
+                        <a class="p_a">摇滚</a>
+                        <span class="line">|</span>
+                        <a class="p_a">民谣</a>
+                        <span class="line">|</span>
+                        <a class="p_a">电子</a>
+                    </p>
+                </div>
+                <span class="more"><a href="allsonglist.html" class="pull-right" style="margin:3px 30px 0 0;color:#0f0f0f ">更多<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                </a><i class="cor s-bg s-bg-6">&nbsp;</i></span>
+            </div>
+            <h5 class="page-header" style="width: 700px ;margin: 0 0 10px 0; border-bottom: 1px solid #e51721;"></h5>
+            <div class="row" >
+
+                <!--一块图片-->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+                    <div href="#" class="thumbnail" style="width:auto;">
+                        <a href="https://www.baidu.com"><img src="img/s_img/g1.jpg" alt="..."   title="好听的歌单">
+                        </a>
+                        <div class="i_pictureinfo ucoverbottom"  >
+                            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+                            <span class="nb" title="播放量">14513</span>
+                            <!--javascrip待写-->
+                            <a class="glyphicon glyphicon-play-circle pull-right " title="播放" href="javascript:;"
+                               data-res-type="13"
+                               data-res-id="2372536640"
+                               data-res-action="play"></a><!--javascrip待写-->
+                        </div>
+                        <h5 class="pictureinfo ">
+                            <a title="奶一口就迷上的欧美优质男嗓" href="https://www.baidu.com" class="hac">一口就迷上</a>
+                        </h5>
+                        <p class="pictureinfo" style="font-size: 12px">by&nbsp<a title="懒狗欧美音乐" href="/user/home?id=xx" >懒狗欧美音乐</a>
+                            <span class="glyphicon glyphicon-star "aria-hidden="true"></span>
+                        </p>
+                    </div>
+                </div>
+                <!--一块图片-->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" >
+                    <div href="#" class="thumbnail" style="width:auto;">
+                        <a href="https://www.baidu.com"><img src="img/s_img/g2.jpg" alt="..."   title="好听的歌单">
+                        </a>
+                        <div class="i_pictureinfo ucoverbottom"  >
+                            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+                            <span class="nb" title="播放量">14513</span>
+                            <!--javascrip待写-->
+                            <a class="glyphicon glyphicon-play-circle pull-right " title="播放" href="javascript:;"
+                               data-res-type="13"
+                               data-res-id="2372536640"
+                               data-res-action="play"></a><!--javascrip待写-->
+                        </div>
+                        <h5 class="pictureinfo ">
+                            <a title="奶一口就迷上的欧美优质男嗓" href="https://www.baidu.com" class="hac">一口就迷上</a>
+                        </h5>
+                        <p class="pictureinfo" style="font-size: 12px">by&nbsp<a title="懒狗欧美音乐" href="/user/home?id=xx" >懒狗欧美音乐</a>
+                            <span class="glyphicon glyphicon-star "aria-hidden="true"></span>
+                        </p>
+                    </div>
+                </div>
+                <!--一块图片-->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <div href="#" class="thumbnail" style="width:auto;">
+                        <a href="https://www.baidu.com"><img src="img/s_img/g3.jpg" alt="..."   title="好听的歌单">
+                        </a>
+                        <div class="i_pictureinfo ucoverbottom"  >
+                            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+                            <span class="nb" title="播放量">14513</span>
+                            <!--javascrip待写-->
+                            <a class="glyphicon glyphicon-play-circle pull-right " title="播放" href="javascript:;"
+                               data-res-type="13"
+                               data-res-id="2372536640"
+                               data-res-action="play"></a><!--javascrip待写-->
+                        </div>
+                        <h5 class="pictureinfo ">
+                            <a title="奶一口就迷上的欧美优质男嗓" href="https://www.baidu.com" class="hac">一口就迷上</a>
+                        </h5>
+                        <p class="pictureinfo" style="font-size: 12px">by&nbsp<a title="懒狗欧美音乐" href="/user/home?id=xx" >懒狗欧美音乐</a>
+                            <span class="glyphicon glyphicon-star "aria-hidden="true"></span>
+                        </p>
+                    </div>
+                </div>
+                <!--一块图片-->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <div href="#" class="thumbnail" style="width:auto;">
+                        <a href="https://www.baidu.com"><img src="img/s_img/g4.jpg" alt="..."   title="好听的歌单">
+                        </a>
+                        <div class="i_pictureinfo ucoverbottom"  >
+                            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+                            <span class="nb" title="播放量">14513</span>
+                            <!--javascrip待写-->
+                            <a class="glyphicon glyphicon-play-circle pull-right " title="播放" href="javascript:;"
+                               data-res-type="13"
+                               data-res-id="2372536640"
+                               data-res-action="play"></a><!--javascrip待写-->
+                        </div>
+                        <h5 class="pictureinfo ">
+                            <a title="奶一口就迷上的欧美优质男嗓" href="https://www.baidu.com" class="hac">一口就迷上</a>
+                        </h5>
+                        <p class="pictureinfo" style="font-size: 12px">by&nbsp<a title="懒狗欧美音乐" href="/user/home?id=xx" >懒狗欧美音乐</a>
+                            <span class="glyphicon glyphicon-star "aria-hidden="true"></span>
+                        </p>
+                    </div>
+                </div>
+                <!--一块图片-->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <div href="#" class="thumbnail" style="width:auto;">
+                        <a href="https://www.baidu.com"><img src="img/s_img/g5.jpg" alt="..."   title="好听的歌单">
+                        </a>
+                        <div class="i_pictureinfo ucoverbottom"  >
+                            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+                            <span class="nb" title="播放量">14513</span>
+                            <!--javascrip待写-->
+                            <a class="glyphicon glyphicon-play-circle pull-right " title="播放" href="javascript:;"
+                               data-res-type="13"
+                               data-res-id="2372536640"
+                               data-res-action="play"></a><!--javascrip待写-->
+                        </div>
+                        <h5 class="pictureinfo ">
+                            <a title="奶一口就迷上的欧美优质男嗓" href="https://www.baidu.com" class="hac">一口就迷上</a>
+                        </h5>
+                        <p class="pictureinfo" style="font-size: 12px">by&nbsp<a title="懒狗欧美音乐" href="/user/home?id=xx" >懒狗欧美音乐</a>
+                            <span class="glyphicon glyphicon-star "aria-hidden="true"></span>
+                        </p>
+                    </div>
+                </div>
+                <!--一块图片-->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <div href="#" class="thumbnail" style="width:auto;">
+                        <a href="https://www.baidu.com"><img src="img/s_img/g5.jpg" alt="..."   title="好听的歌单">
+                        </a>
+                        <div class="i_pictureinfo ucoverbottom"  >
+                            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+                            <span class="nb" title="播放量">14513</span>
+                            <!--javascrip待写-->
+                            <a class="glyphicon glyphicon-play-circle pull-right " title="播放" href="javascript:;"
+                               data-res-type="13"
+                               data-res-id="2372536640"
+                               data-res-action="play"></a><!--javascrip待写-->
+                        </div>
+                        <h5 class="pictureinfo ">
+                            <a title="奶一口就迷上的欧美优质男嗓" href="https://www.baidu.com" class="hac">一口就迷上</a>
+                        </h5>
+                        <p class="pictureinfo" style="font-size: 12px">by&nbsp<a title="懒狗欧美音乐" href="/user/home?id=xx" >懒狗欧美音乐</a>
+                            <span class="glyphicon glyphicon-star "aria-hidden="true"></span>
+                        </p>
+                    </div>
+                </div>
+                <!--一块图片-->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <div href="#" class="thumbnail" style="width:auto;">
+                        <a href="https://www.baidu.com"><img src="img/s_img/g6.jpg" alt="..."   title="好听的歌单">
+                        </a>
+                        <div class="i_pictureinfo ucoverbottom"  >
+                            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+                            <span class="nb" title="播放量">14513</span>
+                            <!--javascrip待写-->
+                            <a class="glyphicon glyphicon-play-circle pull-right " title="播放" href="javascript:;"
+                               data-res-type="13"
+                               data-res-id="2372536640"
+                               data-res-action="play"></a><!--javascrip待写-->
+                        </div>
+                        <h5 class="pictureinfo ">
+                            <a title="奶一口就迷上的欧美优质男嗓" href="https://www.baidu.com" class="hac">一口就迷上</a>
+                        </h5>
+                        <p class="pictureinfo" style="font-size: 12px">by&nbsp<a title="懒狗欧美音乐" href="/user/home?id=xx" >懒狗欧美音乐</a>
+                            <span class="glyphicon glyphicon-star "aria-hidden="true"></span>
+                        </p>
+                    </div>
+                </div>
+                <!--一块图片-->
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <div href="#" class="thumbnail" style="width:auto;">
+                        <a href="https://www.baidu.com"><img src="img/s_img/g7.jpg" alt="..."   title="好听的歌单">
+                        </a>
+                        <div class="i_pictureinfo ucoverbottom"  >
+                            <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+                            <span class="nb" title="播放量">14513</span>
+                            <!--javascrip待写-->
+                            <a class="glyphicon glyphicon-play-circle pull-right " title="播放" href="javascript:;"
+                               data-res-type="13"
+                               data-res-id="2372536640"
+                               data-res-action="play"></a><!--javascrip待写-->
+                        </div>
+                        <h5 class="pictureinfo ">
+                            <a title="奶一口就迷上的欧美优质男嗓" href="https://www.baidu.com" class="hac">一口就迷上</a>
+                        </h5>
+                        <p class="pictureinfo" style="font-size: 12px">by&nbsp<a title="懒狗欧美音乐" href="/user/home?id=xx" >懒狗欧美音乐</a>
+                            <span class="glyphicon glyphicon-star "aria-hidden="true"></span>
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+             </div>
+        </div>
+
+        <!--右边-->
+        <div class="pull-right" style="width: 250px">
+        <img style="width: 251px;border:0" src="img/test/i1.jpg">
+        </div>
+
+
+        <div class="pull-right" style="width: 250px">
+
+        </div>
+
 
 </div>
-<script>
+</div>
 
-
-
-
-
-
-
-
-    $("#myvia,#playmyinfo").mouseover(function(){
-        $("#playmyinfo").css("display","block");});
-
-    $("#myvia,#playmyinfo").mouseout(function(){
-        $("#playmyinfo").css("display","none");});
-</script>
+<iframe src="base.html"></iframe>
 </body>
 </html>

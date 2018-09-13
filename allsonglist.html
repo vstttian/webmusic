@@ -9,27 +9,12 @@
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-select.js"></script>
-    <script src="js/defaults-zh_CN.js"></script>
-
-<style>
-    .pictureinfo{
-        width: 140px;
-        margin-left: 26px;
-
-    }
-    .ucoverbottom{
-        background-color: #d9edf7;
-    }
-    .hac{
-        color: #0f0f0f;
-        font-size: 14px;
-        font-family:  Arial, Helvetica, sans-serif;
-    }
+    <script src="js/kang_main.js" defer="defer"></script>
 
 
-</style>
 </head>
 <body style="background-color:#f5f5f5">
+<!--头部导航-->
 <header >
 
     <nav class="navbar navbar-inverse" style="height:70px">
@@ -37,17 +22,7 @@
             <div class="navbar-header"><!--导航栏按钮-->
 
                 <!--导航栏logo-->
-                <a class="navbar-brand"  style=" float: left;
-                      height: 44px;
-                      padding: 15px 15px;
-                      margin-top: 0px;
-                      margin-left:300px ;
-                      font-size: 18px;
-                      line-height: 20px;
-                      background: url(img/logo.png);
-                      background-size: 180px 55px;
-                      text-indent: -5000px;
-                    width:180px;"
+                <a class="logo"  style=""
                    href="">Webmusic</a>
             </div>
             <div class="cpllapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -74,7 +49,7 @@
                 </li>
                 </ul>
                 <!--登陆后-->
-                <div class="m-tophead f-pr j-tflag"   style="display: block;margin:15px  300px 0 0px;">
+                <div class="m-tophead f-pr j-tflag"   style="display: block;margin:15px  300px 0 0px; z-index:999; ">
                     <div class="head f-fl f-pr myvia" id="myvia">
                         <img src="http://p1.music.126.net/y3PpxBSsVhEqYDtm4-RDUw==/528865129841813.jpg?param=30y30">
                     </div>
@@ -107,19 +82,24 @@
             </div>
         </div>
     </nav>
+
     <div  class="m-subnav" style="margin-top: -20px">
         <ul class="nav" style="margin:0 0 0 245px;">
-            <li><a hidefocus="true" data-module="discover" href="/discover" class="z-slt">推荐</a></li>
+            <li><a hidefocus="true" data-module="discover" href="index.html" class="z-slt">推荐</a></li>
             <li><a hidefocus="true" data-module="toplist" href="/discover/toplist">排行榜</a></li>
-            <li><a hidefocus="true" data-module="playlist" href="/discover/playlist">歌单</a></li>
+            <li><a hidefocus="true" data-module="playlist" href="allsonglist.html">歌单</a></li>
             <li><a hidefocus="true" data-module="djradio" href="/discover/djradio">主播电台</a></li>
             <li><a hidefocus="true" data-module="artist" href="/discover/artist">歌手</a></li>
             <li><a hidefocus="true" data-module="album" href="/discover/album">新碟上架</a></li>
         </ul></div>
 </header>
-<div style="margin: 0 auto 0 auto ;width: 980px; height: 1744px;background-color: #fcfdf8 ">
-    <div  style=" width: 980px; height: 1000px; padding: 20px 40px 0 40px;border:solid;border-width: 0 1px 0 1px;border-color: #d3d3d3 ">
-    <div > <h3 >全部
+
+<!--歌单列表-->
+<div style="margin: 0 auto 0 auto ;width: 980px; height:auto;background-color: #fcfdf8 ">
+    <div  style=" width: 980px; height: auto; padding: 20px 40px 0 40px;border:solid;border-width: 0 1px 0 1px;border-color: #d3d3d3 ">
+    <div >
+        <!--选择种类-->
+        <h3 >全部
             <select class="selectpicker" multiple data-live-search="true" data-actions-box="true" >
                 <optgroup label="语种">
                 <option data-content="<span class='label label-success'>华语</span>" value="1">华语</option>
@@ -158,7 +138,7 @@
             <div href="#" class="thumbnail">
              <a href="https://www.baidu.com"><img src="img/s_img/g1.jpg" alt="..."   title="好听的歌单">
              </a>
-                <div class="pictureinfo ucoverbottom">
+                <div class="pictureinfo ">
               <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
                 <span class="nb" title="播放量">14513</span>
                 <!--javascrip待写-->
@@ -333,8 +313,34 @@
         <!--一块图片-->
     </div>
 </nav>
+
+
+
+
+        <!--    描述：分页  -->
+        <nav aria-label="Page navigation " class="text-center">
+            <ul class="pagination ">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#" aria-label="next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a></li>
+            </ul>
+        </nav>
     </div>
+
 </div>
+
+<!--底部-->
+<iframe src="base.html" ></iframe>
 
 <script>
 
