@@ -1,134 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>showall</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet " href="css/bootstrap-select.css">
-    <link rel="stylesheet" href="css/kang_main.css">
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/kang_main.js" defer="defer"></script>
-
+	<meta charset="UTF-8">
+	<title>showall</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet " href="css/bootstrap-select.css">
+	<link rel="stylesheet" href="css/kang_main.css">
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-select.js"></script>
+	<script src="js/kang_main.js" defer="defer"></script>
+	<script>
+        $(function () {
+            $("#head").load("/webmusic/header.html");
+        })
+	</script>
 
 </head>
 <body style="background-color:#f5f5f5">
 <!--头部导航-->
-<header >
-
-    <nav class="navbar navbar-inverse" style="height:70px">
-        <div class="container-fluid">
-            <div class="navbar-header"><!--导航栏按钮-->
-
-                <!--导航栏logo-->
-                <a class="logo"  style=""
-                   href="">Webmusic</a>
-            </div>
-            <div class="cpllapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav" style="margin: 8px 35px 0 35px">
-                    <!-- <li class="dropdown" style="line-height:205px"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                     role="button" aria-haspopup="true" aria-expanded="false">发现音乐<span class="caret"></span></a>
-                     <ul class="dropdown-menu"><li><a href="#">推荐</a> </li>
-                         <li><a href="#">推荐</a> </li>
-                         <li><a href="">排行榜</a> </li>
-                         <li><a href="#">歌单</a> </li>
-                         <li><a href="#">歌手</a> </li>
-                     </ul>
-
-                     </li>-->
-                    <li><a hraf="#">发现音乐</a></li>
-                    <li><a hraf="#">我的音乐</a></li>
-                    <li><a href="dongtai.html">朋友</a> </li>
-                </ul>
-                <!--登录前-->
-                <ul class="nav navbar-nav navbar-right" style="margin:7px  260px 0px 0px;display: none " >
-                    <li><a href="#">登陆</a></li>
-                    <li><a href="#">注册</a></li>
-                </ul>
-                </li>
-                </ul>
-                <!--登陆后-->
-                <div class="m-tophead f-pr j-tflag"   style="display: block;margin:15px  300px 0 0px; z-index:999; ">
-                    <div class="head f-fl f-pr myvia" id="myvia">
-                        <img src="http://p1.music.126.net/y3PpxBSsVhEqYDtm4-RDUw==/528865129841813.jpg?param=30y30">
-                    </div>
-                    <a href="/user/home?id=" class=" f-hide">Always-与我常在</a>
-
-                    <div class="m-tlist m-tlist-lged  " id="playmyinfo" style="display: none; margin-top: -8px"><ul class="f-cb lb mg">
-                        <li><a hidefocus="true" class="" href="/user/home?id=115548632" style="color: #ece7e2;">
-                            <i class="itm-2"></i>我的主页</a></li>
-                        <li><a href="/msg/#/at" class="" style="color: #ece7e2;">
-                            <i class=""></i>我的消息<span class="m-topmsg f-pa f-hide j-uflag"></span></a></li>
-                        <li><a href="/user/level" data-action="viewLevel" class="" style="color: #ece7e2;">
-                            <i class=""></i>我的等级</a></li>
-                        <li><a href="/member" class="" style="color: #ece7e2;">
-                            <i class=""></i>VIP会员</a></li>
-                        <li><a hidefocus="true" class="" href="/user/update" style="color: #ece7e2;">
-                            <i class=""></i>个人设置</a></li>
-                        <li><a hidefocus="true" class="" href="#" data-action="logout" style="color: #ece7e2;">
-                            <i class=""></i>退出</a></li>
-                    </ul>
-                    </div></div>
-
-
-                <!--搜索框表单-->
-                <form class="navbar-form navbar-right" style="margin:13px  0px 0px 0px ">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="音乐/用户">
-                    </div>
-                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-    <div  class="m-subnav" style="margin-top: -20px">
-        <ul class="nav" style="margin:0 0 0 245px;">
-            <li><a hidefocus="true" data-module="discover" href="index.html" class="z-slt">推荐</a></li>
-            <li><a hidefocus="true" data-module="toplist" href="/discover/toplist">排行榜</a></li>
-            <li><a hidefocus="true" data-module="playlist" href="allsonglist.html">歌单</a></li>
-            <li><a hidefocus="true" data-module="djradio" href="/discover/djradio">主播电台</a></li>
-            <li><a hidefocus="true" data-module="artist" href="/discover/artist">歌手</a></li>
-            <li><a hidefocus="true" data-module="album" href="/discover/album">新碟上架</a></li>
-        </ul></div>
-</header>
+<div id="head"></div>
 
 <!--歌单列表-->
 <div style="margin: 0 auto 0 auto ;width: 980px; height:auto;background-color: #fcfdf8 ">
-    <div  style=" width: 980px; float: left; height: auto; border:solid;border-width: 0 1px 0 1px;border-color: #d3d3d3 ">
-    
+	<div  style=" width: 980px; float: left; height: auto; border:solid;border-width: 0 1px 0 1px;border-color: #d3d3d3 ">
 
-<div style="float:  left">
-	<div style="height: 600px; width: 180px; background-color:#6C757D; float: left;padding: 51px 10px;">
-		d
-	</div>
-	<div  style="float: left;padding: 40px;">
-		
-		<div style="border-bottom: 2px solid red; width: 100%;height: 30px;background-color: #31B0D5;">
-			d
+
+		<div style="float:  left">
+			<div style="width: 180px; border-right: 1px solid #d3d3d3; float: left;padding: 51px 18px;padding-bottom: 20px;">
+				<div style="border-bottom: 1px solid #d3d3d3;width: 100%;">
+
+					<h5 style="font-size: 16px;font-weight: 700;">推荐</h5>
+					<ul style="margin-top: 10px;padding-left: 14px;">
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">推荐歌手</a> </li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">入驻歌手</a></li>
+					</ul>
+				</div>
+				<div style="border-bottom: 1px solid #d3d3d3;margin-top: 20px; width: 100%;">
+					<h5 style="font-size: 16px;font-weight: 700;">华语</h5>
+					<ul style="margin-top: 10px;padding-left: 14px;">
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">华语男歌手</a></li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">华语女歌手</a></li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">华语组合/乐队</a></li>
+					</ul>
+				</div>
+				<div style="border-bottom: 1px solid #d3d3d3;margin-top: 20px; width: 100%;">
+					<h5 style="font-size: 16px;font-weight: 700;">欧美</h5>
+					<ul style="margin-top: 10px;padding-left: 14px;">
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">欧美男歌手</a></li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">欧美女歌手</a></li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">欧美组合/乐队</a></li>
+					</ul>
+				</div>
+				<div style="border-bottom: 1px solid #d3d3d3;margin-top: 20px; width: 100%;">
+					<h5 style="font-size: 16px;font-weight: 700;">日本</h5>
+					<ul style="margin-top: 10px;padding-left: 14px;">
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">日本男歌手</a></li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">日本女歌手</a></li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">日本组合/乐队</a></li>
+					</ul>
+				</div>
+				<div style="border-bottom: 1px solid #d3d3d3;margin-top: 20px; width: 100%;">
+					<h5 style="font-size: 16px;font-weight: 700;">韩国</h5>
+					<ul style="margin-top: 10px;padding-left: 14px;">
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">韩国男歌手</a></li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">韩国女歌手</a></li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">韩国组合/乐队</a></li>
+					</ul>
+				</div>
+				<div style="border-bottom: 1px solid #d3d3d3;margin-top: 20px; width: 100%;">
+					<h5 style="font-size: 16px;font-weight: 700;">其他</h5>
+					<ul style="margin-top: 10px;padding-left: 14px;">
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">其他男歌手</a></li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">其他女歌手</a></li>
+						<li style="margin: 5px 0px;"><a href="#" style="color: #333;">其他组合/乐队</a></li>
+					</ul>
+				</div>
+			</div>
+			<div  style="float: left;padding: 40px;width: 797px;">
+
+				<div style="border-bottom: 2px solid #c20c0c; width: 100%;padding-bottom: 10px;float: left;">
+					<div style="float: left;">
+						<font style="font-size: 24px;float: left;;">入驻歌手</font>
+					</div>
+					<div style="float: right;">
+						<a href="#" style=""><font style="color: #999999;">更多></font></a>
+					</div>
+				</div>
+
+				<div style="margin-right: -20px;margin-top: 20px; float: left;">
+					<!--一块图片-->
+					<div style="float: left;margin-right: 17px;margin-bottom: 30px; width:130px;height: 140px;">
+						<a href="https://www.baidu.com"><img src="img/s_img/g14.jpg" style="width: 130px;height: 130px;" alt="..."   title="好听的歌单">
+						</a>
+						<div class="pictureinfo " style="margin-left: 0px;width: 130px;">
+
+							<span class="nb" title="播放量">苏乞儿</span>
+							<!--javascrip待写-->
+							<a class="glyphicon glyphicon-user " style="float: right;color: #666;" title="播放" href="javascript:;"
+							   data-res-type="13"
+							   data-res-id="2372536640"
+							   data-res-action="play"></a><!--javascrip待写-->
+						</div>
+					</div>
+					<!--end-->
+					<!--一块图片-->
+					<div style="float: left;margin-right: 17px;margin-bottom: 30px; width:130px;height: 140px;">
+						<a href="https://www.baidu.com"><img src="img/s_img/g15.jpg" style="width: 130px;height: 130px;" alt="..."   title="好听的歌单">
+						</a>
+						<div class="pictureinfo " style="margin-left: 0px;width: 130px;">
+
+							<span class="nb" title="播放量">吴莫愁</span>
+							<!--javascrip待写-->
+							<a class="glyphicon glyphicon-user " style="float: right;color: #666;" title="播放" href="javascript:;"
+							   data-res-type="13"
+							   data-res-id="2372536640"
+							   data-res-action="play"></a><!--javascrip待写-->
+						</div>
+					</div>
+					<!--end-->
+					<!--一块图片-->
+					<div style="float: left;margin-right: 17px;margin-bottom: 30px; width:130px;height: 140px;">
+						<a href="https://www.baidu.com"><img src="img/s_img/g16.jpg" style="width: 130px;height: 130px;" alt="..."   title="好听的歌单">
+						</a>
+						<div class="pictureinfo " style="margin-left: 0px;width: 130px;">
+
+							<span class="nb" title="播放量">王三溥</span>
+							<!--javascrip待写-->
+							<a class="glyphicon glyphicon-user " style="float: right;color: #666;" title="播放" href="javascript:;"
+							   data-res-type="13"
+							   data-res-id="2372536640"
+							   data-res-action="play"></a><!--javascrip待写-->
+						</div>
+					</div>
+					<!--end-->
+					<!--一块图片-->
+					<div style="float: left;margin-right: 17px;margin-bottom: 30px; width:130px;height: 140px;">
+						<a href="https://www.baidu.com"><img src="img/s_img/g17.jpg" style="width: 130px;height: 130px;" alt="..."   title="好听的歌单">
+						</a>
+						<div class="pictureinfo " style="margin-left: 0px;width: 130px;">
+
+							<span class="nb" title="播放量">李霄云</span>
+							<!--javascrip待写-->
+							<a class="glyphicon glyphicon-user " style="float: right;color: #666;" title="播放" href="javascript:;"
+							   data-res-type="13"
+							   data-res-id="2372536640"
+							   data-res-action="play"></a><!--javascrip待写-->
+						</div>
+					</div>
+					<!--end-->
+					<!--一块图片-->
+					<div style="float: left;margin-right: 17px;margin-bottom: 30px; width:130px;height: 140px;">
+						<a href="https://www.baidu.com"><img src="img/s_img/g18.jpg" style="width: 130px;height: 130px;" alt="..."   title="好听的歌单">
+						</a>
+						<div class="pictureinfo " style="margin-left: 0px;width: 130px;">
+
+							<span class="nb" title="播放量">林俊杰</span>
+							<!--javascrip待写-->
+							<a class="glyphicon glyphicon-user " style="float: right;color: #666;" title="播放" href="javascript:;"
+							   data-res-type="13"
+							   data-res-id="2372536640"
+							   data-res-action="play"></a><!--javascrip待写-->
+						</div>
+					</div>
+					<!--end-->
+					<!--一块图片-->
+					<div style="float: left;margin-right: 17px;margin-bottom: 30px; width:130px;height: 140px;">
+						<a href="https://www.baidu.com"><img src="img/s_img/g19.jpg" style="width: 130px;height: 130px;" alt="..."   title="好听的歌单">
+						</a>
+						<div class="pictureinfo " style="margin-left: 0px;width: 130px;">
+
+							<span class="nb" title="播放量">邓紫棋</span>
+							<!--javascrip待写-->
+							<a class="glyphicon glyphicon-user " style="float: right;color: #666;" title="播放" href="javascript:;"
+							   data-res-type="13"
+							   data-res-id="2372536640"
+							   data-res-action="play"></a><!--javascrip待写-->
+						</div>
+					</div>
+					<!--end-->
+					<!--一块图片-->
+					<div style="float: left;margin-right: 17px;margin-bottom: 30px; width:130px;height: 140px;">
+						<a href="https://www.baidu.com"><img src="img/s_img/g20.jpg" style="width: 130px;height: 130px;" alt="..."   title="好听的歌单">
+						</a>
+						<div class="pictureinfo " style="margin-left: 0px;width: 130px;">
+
+							<span class="nb" title="播放量">陈奕迅</span>
+							<!--javascrip待写-->
+							<a class="glyphicon glyphicon-user " style="float: right;color: #666;" title="播放" href="javascript:;"
+							   data-res-type="13"
+							   data-res-id="2372536640"
+							   data-res-action="play"></a><!--javascrip待写-->
+						</div>
+					</div>
+					<!--end-->
+					<!--一块图片-->
+					<div style="float: left;margin-right: 17px;margin-bottom: 30px; width:130px;height: 140px;">
+						<a href="https://www.baidu.com"><img src="img/s_img/g21.jpg" style="width: 130px;height: 130px;" alt="..."   title="好听的歌单">
+						</a>
+						<div class="pictureinfo " style="margin-left: 0px;width: 130px;">
+
+							<span class="nb" title="播放量">林宥嘉</span>
+							<!--javascrip待写-->
+							<a class="glyphicon glyphicon-user " style="float: right;color: #666;" title="播放" href="javascript:;"
+							   data-res-type="13"
+							   data-res-id="2372536640"
+							   data-res-action="play"></a><!--javascrip待写-->
+						</div>
+					</div>
+					<!--end-->
+				</div>
+
+
+			</div>
 		</div>
-		<div >
-        <!--一块图片-->
-             <a href="https://www.baidu.com"><img src="img/s_img/g1.jpg" alt="..."   title="好听的歌单">
-             </a>
-                <div class="pictureinfo ">
-	              <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
-	                <span class="nb" title="播放量">14513</span>
-	                <!--javascrip待写-->
-	                <a class="glyphicon glyphicon-play-circle pull-right " title="播放" href="javascript:;"
-	                   data-res-type="13"
-	                   data-res-id="2372536640"
-	                   data-res-action="play"></a><!--javascrip待写-->
-                </div>
-          </div>   
-        <!--一块图片-->
-        
-    </div>
-</div>
-    
 
-    </div>
+
+	</div>
 
 </div>
 

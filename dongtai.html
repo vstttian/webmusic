@@ -23,21 +23,27 @@
     		.sb_dt_songimg_ze:hover{background:rgba(0,0,0,0)}
     		.addMusicBar:hover{background-color: #f7f7f7;}
     	</style>
+	<script>
+        $(function () {
+            $("#head").load("/webmusic/header.html");
+        })
+	</script>
 </head>
 <body style="background-color: #f5f5f5">
-<header >
+<div id="head"></div>
+<!--<header >
 
 	<nav class="navbar navbar-inverse" style="height:70px">
 		<div class="container-fluid">
-			<div class="navbar-header"><!--导航栏按钮-->
+			<div class="navbar-header">&lt;!&ndash;导航栏按钮&ndash;&gt;
 
-				<!--导航栏logo-->
+				&lt;!&ndash;导航栏logo&ndash;&gt;
 				<a class="logo"  style=""
 				   href="">Webmusic</a>
 			</div>
 			<div class="cpllapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav" style="margin: 8px 35px 0 35px">
-					<!-- <li class="dropdown" style="line-height:205px"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
+					&lt;!&ndash; <li class="dropdown" style="line-height:205px"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
                      role="button" aria-haspopup="true" aria-expanded="false">发现音乐<span class="caret"></span></a>
                      <ul class="dropdown-menu"><li><a href="#">推荐</a> </li>
                          <li><a href="#">推荐</a> </li>
@@ -46,26 +52,26 @@
                          <li><a href="#">歌手</a> </li>
                      </ul>
 
-                     </li>-->
+                     </li>&ndash;&gt;
 					<li><a hraf="#">发现音乐</a></li>
 					<li><a hraf="#">我的音乐</a></li>
 					<li><a href="dongtai.html">朋友</a> </li>
 				</ul>
-				<!--搜索框表单-->
+				&lt;!&ndash;搜索框表单&ndash;&gt;
 				<form class="navbar-form navbar-right" style="margin:13px  0px 0px 0px;float: left!important; ">
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="音乐/用户">
 					</div>
 					<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 				</form>
-				<!--登录前-->
+				&lt;!&ndash;登录前&ndash;&gt;
 				<ul class="nav navbar-nav navbar-right" style="margin:7px  260px 0px 0px;" >
 					<li><a  onclick="hideAndShow(1)">登陆</a></li>
 					<li><a  onclick="hideAndShow(2)">注册</a></li>
 				</ul>
 				</li>
 				</ul>
-				<!--登陆后-->
+				&lt;!&ndash;登陆后&ndash;&gt;
 				<div class="m-tophead f-pr j-tflag"   style="display: block;float: left; display: none;">
 					<div class="head f-fl f-pr myvia" id="myvia">
 						<img src="http://p1.music.126.net/y3PpxBSsVhEqYDtm4-RDUw==/528865129841813.jpg?param=30y30">
@@ -100,7 +106,7 @@
 			<li><a hidefocus="true" data-module="artist" href="/discover/artist">歌手</a></li>
 			<li><a hidefocus="true" data-module="album" href="/discover/album">新碟上架</a></li>
 		</ul></div>
-</header>
+</header>-->
 <!-- 登录模态框 -->
 <div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >
 		  <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
@@ -365,7 +371,7 @@
 																		
 																	</div>
 																</div>
-																<div class="collapse" id="collapse2" style="margin-top: 41px;position: relative;">
+																<div class="collapse" id="collapse22" style="margin-top: 41px;position: relative;">
 																	<div style="float:right;margin-top: -10px;margin-right: 22px;position: relative;">
 																		<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
 																		<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
@@ -409,7 +415,7 @@
 																		
 																	</div>
 																</div>
-																<div class="collapse" id="collapse2" style="margin-top: 41px;position: relative;">
+																<div class="collapse" id="collapse24" style="margin-top: 41px;position: relative;">
 																	<div style="float:right;margin-top: -10px;margin-right: 22px;position: relative;">
 																		<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
 																		<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
@@ -452,7 +458,7 @@
 																		
 																	</div>
 																</div>
-																<div class="collapse" id="collapse2" style="margin-top: 41px;position: relative;">
+																<div class="collapse" id="collapse23" style="margin-top: 41px;position: relative;">
 																	<div style="float:right;margin-top: -10px;margin-right: 22px;position: relative;">
 																		<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
 																		<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
@@ -651,7 +657,7 @@
 																		
 																	</div>
 																</div>
-																<div class="collapse" id="collapse2" style="margin-top: 41px;position: relative;">
+																<div class="collapse" id="collapse25" style="margin-top: 41px;position: relative;">
 																	<div style="float:right;margin-top: -10px;margin-right: 22px;position: relative;">
 																		<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
 																		<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
@@ -750,20 +756,20 @@
         			<div style="border-right: 1px solid #c2c2c2;float: left;padding:0px 20px;padding-left: 0px;">
         				<a href="#">
         					<em style="width: 100%;color: #666;font-size: 20px;font-weight: 500;">5</em>
-        					<i style="width: 100%;color: #666;font-size: 12px;font-weight: 500;">动态</label>
+        					<i style="width: 100%;color: #666;font-size: 12px;font-weight: 500;">动态</i>
         				</a>
         			</div>
         			<div style="border-right: 1px solid #c2c2c2;float: left;padding:0px 20px;">
         				<a href="#">
         					<em style="width: 100%;color: #666;font-size: 20px;font-weight: 500;">10</em>
-        					<i style="width: 100%;color: #666;font-size: 12px;font-weight: 500;">关注</label>
+        					<i style="width: 100%;color: #666;font-size: 12px;font-weight: 500;">关注</i>
         				</a>
         			</div>
         		
         			<div style="float: left;padding-left: 20px;">
         				<a href="#">
         					<em style="width: 100%;color: #666;font-size: 20px;font-weight: 500;">0</em>
-        					<i style="width: 100%;color: #666;font-size: 12px;font-weight: 500;">粉丝</label>
+        					<i style="width: 100%;color: #666;font-size: 12px;font-weight: 500;">粉丝</i>
         				</a>
         			</div>
         			<div></div>
@@ -787,7 +793,7 @@
 							<div class="media-body">
 								<div class="media-heading"><a href="#" style="color: #333;">郭采洁</a> </div>
 								
-								<div id="toFouce2" class="addMusicBar" style="float: right;border: 1px solid #d3d3d3; border-radius: 3px; height: 25px;width: 56px;font-size: 12px;padding: 4px 7px;cursor: pointer;" onclick="focusPeople()">
+								<div id="toFouce23" class="addMusicBar" style="float: right;border: 1px solid #d3d3d3; border-radius: 3px; height: 25px;width: 56px;font-size: 12px;padding: 4px 7px;cursor: pointer;" onclick="focusPeople()">
 									<span class="glyphicon glyphicon-plus" style="color: #c2240c;" aria-hidden="true"></span>
 									关注
 								</div>
