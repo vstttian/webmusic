@@ -28,85 +28,20 @@
             $("#head").load("/webmusic/header.html");
         })
 	</script>
+	<style>
+		table{
+			table-layout: fixed;
+		}
+		td{
+			overflow:hidden;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+		}
+	</style>
 </head>
 <body style="background-color: #f5f5f5">
 <div id="head"></div>
-<!--<header >
 
-	<nav class="navbar navbar-inverse" style="height:70px">
-		<div class="container-fluid">
-			<div class="navbar-header">&lt;!&ndash;导航栏按钮&ndash;&gt;
-
-				&lt;!&ndash;导航栏logo&ndash;&gt;
-				<a class="logo"  style=""
-				   href="">Webmusic</a>
-			</div>
-			<div class="cpllapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav" style="margin: 8px 35px 0 35px">
-					&lt;!&ndash; <li class="dropdown" style="line-height:205px"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                     role="button" aria-haspopup="true" aria-expanded="false">发现音乐<span class="caret"></span></a>
-                     <ul class="dropdown-menu"><li><a href="#">推荐</a> </li>
-                         <li><a href="#">推荐</a> </li>
-                         <li><a href="">排行榜</a> </li>
-                         <li><a href="#">歌单</a> </li>
-                         <li><a href="#">歌手</a> </li>
-                     </ul>
-
-                     </li>&ndash;&gt;
-					<li><a hraf="#">发现音乐</a></li>
-					<li><a hraf="#">我的音乐</a></li>
-					<li><a href="dongtai.html">朋友</a> </li>
-				</ul>
-				&lt;!&ndash;搜索框表单&ndash;&gt;
-				<form class="navbar-form navbar-right" style="margin:13px  0px 0px 0px;float: left!important; ">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="音乐/用户">
-					</div>
-					<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-				</form>
-				&lt;!&ndash;登录前&ndash;&gt;
-				<ul class="nav navbar-nav navbar-right" style="margin:7px  260px 0px 0px;" >
-					<li><a  onclick="hideAndShow(1)">登陆</a></li>
-					<li><a  onclick="hideAndShow(2)">注册</a></li>
-				</ul>
-				</li>
-				</ul>
-				&lt;!&ndash;登陆后&ndash;&gt;
-				<div class="m-tophead f-pr j-tflag"   style="display: block;float: left; display: none;">
-					<div class="head f-fl f-pr myvia" id="myvia">
-						<img src="http://p1.music.126.net/y3PpxBSsVhEqYDtm4-RDUw==/528865129841813.jpg?param=30y30">
-					</div>
-					<a href="/user/home?id=" class=" f-hide">Always-与我常在</a>
-
-					<div class="m-tlist m-tlist-lged  " id="playmyinfo" style="display: none; margin-top: -8px"><ul class="f-cb lb mg">
-						<li><a hidefocus="true" class="" href="/user/home?id=115548632" style="color: #ece7e2;">
-							<i class="itm-2"></i>我的主页</a></li>
-						<li><a href="/msg/#/at" class="" style="color: #ece7e2;">
-							<i class=""></i>我的消息<span class="m-topmsg f-pa f-hide j-uflag"></span></a></li>
-						<li><a href="/user/level" data-action="viewLevel" class="" style="color: #ece7e2;">
-							<i class=""></i>我的等级</a></li>
-						<li><a href="/member" class="" style="color: #ece7e2;">
-							<i class=""></i>VIP会员</a></li>
-						<li><a hidefocus="true" class="" href="/user/update" style="color: #ece7e2;">
-							<i class=""></i>个人设置</a></li>
-						<li><a hidefocus="true" class="" href="#" data-action="logout" style="color: #ece7e2;">
-							<i class=""></i>退出</a></li>
-					</ul>
-					</div></div>
-			</div>
-		</div>
-	</nav>
-
-	<div  class="m-subnav" style="margin-top: -20px">
-		<ul class="nav" style="margin:0 0 0 245px;">
-			<li><a hidefocus="true" data-module="discover" href="index.html" class="z-slt">推荐</a></li>
-			<li><a hidefocus="true" data-module="toplist" href="/discover/toplist">排行榜</a></li>
-			<li><a hidefocus="true" data-module="playlist" href="allsonglist.html">歌单</a></li>
-			<li><a hidefocus="true" data-module="djradio" href="/discover/djradio">主播电台</a></li>
-			<li><a hidefocus="true" data-module="artist" href="/discover/artist">歌手</a></li>
-			<li><a hidefocus="true" data-module="album" href="/discover/album">新碟上架</a></li>
-		</ul></div>
-</header>-->
 <!-- 登录模态框 -->
 <div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >
 		  <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
@@ -156,11 +91,11 @@
 		  </div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
 <!-- 发送动态模态框 -->
-<div class="modal fade" tabindex="-1" role="dialog" id="modal1" >
+<div class="modal fade" tabindex="-1" role="dialog" id="addDongTaiModal" >
   <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
     <div class="modal-content">
       <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal"  aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
         <h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">分享</h4>
       </div>
       <div class="modal-body">
@@ -169,7 +104,7 @@
         	<div style="border: 1px solid #d9d9d9;border-radius: 2px;">
         		<textarea style="resize: none;height: 100px;border: none;" class="form-control" placeholder="一起聊聊吧~"></textarea>
         		<div style="height: 42px;width: 100%;border-top: 1px solid #d9d9d9;margin: 5px 0px;">
-        			<div class="addMusicBar" style="padding: 8px 10px;position: absolute;width: 83%;cursor: pointer;">
+        			<div class="addMusicBar" onclick="hideAndShow(4)" style="padding: 8px 10px;position: absolute;width: 83%;cursor: pointer;">
         				<img src="img/1420569024374784.jpg" width="30" height="30" style="float: left;" />
         				<span style="float: left;margin-left: 10px;line-height: 31px;color: #999;">给动态配上音乐</span>
 						<img src="img/add.png" style="float: right;margin-top: 6px;"/>
@@ -200,18 +135,57 @@
 <!-- 动态中选择音乐模态框 -->
 <div class="modal fade" tabindex="-1" role="dialog" id="selectMusicModal" >
 	<div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
-		<div class="modal-content">
+		<div class="modal-content" >
 			<div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
+				<button type="button" class="close" onclick="hideAndShow(3)" aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
 				<h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">分享</h4>
 			</div>
-			<div class="modal-body">
-				<p>One fine body&hellip;</p>
+			<div class="modal-body" style="padding: 20px 40px;">
+				<div style="">
+					<div class="input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
 
+						<input class="form-control">
+					</div>
+
+					<ul class="nav nav-tabs" role="tablist" style="">
+						<li role="presentation" class="active">
+							<a href="#songs" style="color: #333;" aria-controls="home" role="tab" data-toggle="tab">单曲</a>
+						</li>
+						<li role="presentation">
+							<a href="#singer" style="color: #333;" aria-controls="profile" role="tab" data-toggle="tab">歌手</a>
+						</li>
+						<li role="presentation">
+							<a href="#album" style="color: #333;" aria-controls="messages" role="tab" data-toggle="tab">专辑</a>
+						</li>
+						<li role="presentation">
+							<a href="#mv" style="color: #333;" aria-controls="settings" role="tab" data-toggle="tab">MV</a>
+						</li>
+						<li role="presentation">
+							<a href="#songList" style="color: #333;" aria-controls="settings" role="tab" data-toggle="tab">歌单</a>
+						</li>
+					</ul>
+					<div class="tab-content" style="height: 196px;border: 1px solid #d3d3d3;border-top: 0px;">
+						<div role="tabpanel" class="tab-pane active" id="songs">
+
+							<table class="table table-striped" >
+								<tr>
+									<td width="7%"><span class="glyphicon glyphicon-play-circle"></span> </td>
+									<td width="55%">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+									<td width="43%">bb</td>
+								</tr>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="singer">歌手</div>
+						<div role="tabpanel" class="tab-pane" id="album">专辑</div>
+						<div role="tabpanel" class="tab-pane" id="mv">MV</div>
+						<div role="tabpanel" class="tab-pane" id="songList">歌单</div>
+					</div>
+				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-				<button type="button" class="btn btn-primary">分享</button>
+				<button type="button" class="btn btn-default" onclick="hideAndShow(3)">取消</button>
+				<button type="button" class="btn btn-primary" onclick="hideAndShow(3)">确定</button>
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
@@ -226,7 +200,7 @@
 				<div style="float: left;"> <font style="font-size: 24px;">动态</font></div>
 				<div style="float:right;height: 40px; padding:8px 0px;">
 					<!--<button class="btn btn-default" style="float: left;margin:0px 5px;border-radius:25px;">地方aaaa</button>-->
-					<div class="mycss" data-toggle="modal" data-target="#modal1" style="width: 83px;float: left;margin:0px 0px; border: 1px solid #d3d3d3;border-radius: 25px;padding:0px 9px;cursor:pointer;">
+					<div class="mycss" onclick="hideAndShow(3)" style="width: 83px;float: left;margin:0px 0px; border: 1px solid #d3d3d3;border-radius: 25px;padding:0px 9px;cursor:pointer;">
 						<img src="img/writeIcon.png" style="width: 12px;"/>
 						发动态
 					</div>
@@ -839,8 +813,19 @@
 			$('#loginModal').modal('toggle');
 		}
 		else if(kind == 2){
+		    //show the regist and hide the login
 			$('#loginModal').modal('hide');
 			$('#registModal').modal('toggle');
+		}
+		else if(kind == 3){
+		    //show the editDongtaiModal and hide the addMusicModal
+			$('#selectMusicModal').modal('hide');
+			$('#addDongTaiModal').modal('toggle');
+		}
+		else if(kind == 4){
+		    //show the addMusicModal and hide the editDongtaiModal
+			$('#addDongTaiModal').modal('hide');
+			$('#selectMusicModal').modal('toggle');
 		}
 	}
 </script>
