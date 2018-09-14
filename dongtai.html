@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="bootstrap4/js/jquery-1.9.1.min.js"></script>
+    <script src="bootstrap4/js/bootstrap.min.js"></script>
+    <link href="bootstrap4/css/bootstrap.min.css" rel="stylesheet">-->
+    	<script src="js/jquery-1.9.1.min.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<script src="js/sb_viewer.js"></script>
+  		<script src="js/sb_main.js"></script>
+		<script src="js/kang_main.js" defer="defer"></script>
+    	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+    	<link rel="stylesheet" href="css/sb_viewer.css">
+  		<link rel="stylesheet" href="css/sb_main.css">
+		<link rel="stylesheet" href="css/kang_main.css">
+
+    	<style>
+    		.mycss{background-color: #FFFFFF;}
+    		.mycss:hover{background-color: #f7f7f7}
+    		.sb_dt_songimg_ze {background: rgba(0,0,0,0.25);}
+    		.sb_dt_songimg_ze:hover{background:rgba(0,0,0,0)}
+    		.addMusicBar:hover{background-color: #f7f7f7;}
+    	</style>
+</head>
+<body style="background-color: #f5f5f5">
+<header >
+
+	<nav class="navbar navbar-inverse" style="height:70px">
+		<div class="container-fluid">
+			<div class="navbar-header"><!--导航栏按钮-->
+
+				<!--导航栏logo-->
+				<a class="logo"  style=""
+				   href="">Webmusic</a>
+			</div>
+			<div class="cpllapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav" style="margin: 8px 35px 0 35px">
+					<!-- <li class="dropdown" style="line-height:205px"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                     role="button" aria-haspopup="true" aria-expanded="false">发现音乐<span class="caret"></span></a>
+                     <ul class="dropdown-menu"><li><a href="#">推荐</a> </li>
+                         <li><a href="#">推荐</a> </li>
+                         <li><a href="">排行榜</a> </li>
+                         <li><a href="#">歌单</a> </li>
+                         <li><a href="#">歌手</a> </li>
+                     </ul>
+
+                     </li>-->
+					<li><a hraf="#">发现音乐</a></li>
+					<li><a hraf="#">我的音乐</a></li>
+					<li><a href="dongtai.html">朋友</a> </li>
+				</ul>
+				<!--搜索框表单-->
+				<form class="navbar-form navbar-right" style="margin:13px  0px 0px 0px;float: left!important; ">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="音乐/用户">
+					</div>
+					<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+				</form>
+				<!--登录前-->
+				<ul class="nav navbar-nav navbar-right" style="margin:7px  260px 0px 0px;" >
+					<li><a  onclick="hideAndShow(1)">登陆</a></li>
+					<li><a  onclick="hideAndShow(2)">注册</a></li>
+				</ul>
+				</li>
+				</ul>
+				<!--登陆后-->
+				<div class="m-tophead f-pr j-tflag"   style="display: block;float: left; display: none;">
+					<div class="head f-fl f-pr myvia" id="myvia">
+						<img src="http://p1.music.126.net/y3PpxBSsVhEqYDtm4-RDUw==/528865129841813.jpg?param=30y30">
+					</div>
+					<a href="/user/home?id=" class=" f-hide">Always-与我常在</a>
+
+					<div class="m-tlist m-tlist-lged  " id="playmyinfo" style="display: none; margin-top: -8px"><ul class="f-cb lb mg">
+						<li><a hidefocus="true" class="" href="/user/home?id=115548632" style="color: #ece7e2;">
+							<i class="itm-2"></i>我的主页</a></li>
+						<li><a href="/msg/#/at" class="" style="color: #ece7e2;">
+							<i class=""></i>我的消息<span class="m-topmsg f-pa f-hide j-uflag"></span></a></li>
+						<li><a href="/user/level" data-action="viewLevel" class="" style="color: #ece7e2;">
+							<i class=""></i>我的等级</a></li>
+						<li><a href="/member" class="" style="color: #ece7e2;">
+							<i class=""></i>VIP会员</a></li>
+						<li><a hidefocus="true" class="" href="/user/update" style="color: #ece7e2;">
+							<i class=""></i>个人设置</a></li>
+						<li><a hidefocus="true" class="" href="#" data-action="logout" style="color: #ece7e2;">
+							<i class=""></i>退出</a></li>
+					</ul>
+					</div></div>
+			</div>
+		</div>
+	</nav>
+
+	<div  class="m-subnav" style="margin-top: -20px">
+		<ul class="nav" style="margin:0 0 0 245px;">
+			<li><a hidefocus="true" data-module="discover" href="index.html" class="z-slt">推荐</a></li>
+			<li><a hidefocus="true" data-module="toplist" href="/discover/toplist">排行榜</a></li>
+			<li><a hidefocus="true" data-module="playlist" href="allsonglist.html">歌单</a></li>
+			<li><a hidefocus="true" data-module="djradio" href="/discover/djradio">主播电台</a></li>
+			<li><a hidefocus="true" data-module="artist" href="/discover/artist">歌手</a></li>
+			<li><a hidefocus="true" data-module="album" href="/discover/album">新碟上架</a></li>
+		</ul></div>
+</header>
+<!-- 登录模态框 -->
+<div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >
+		  <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
+		    <div class="modal-content">
+		      <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
+		        <h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">手机号登录</h4>
+		      </div>
+		      <div class="modal-body">
+		        <!--<p>One fine body&hellip;</p>-->
+		        <div style="margin: 8px auto;width: 220px;height: 90px;">
+		        	<input class="form-control" style="margin-bottom: 10px;border-radius: 1px;" placeholder="请输入手机号"/>
+		        	<input class="form-control" style="border-radius: 1px;" placeholder="请输入密码"/>
+		        	
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		      	<a style="float: left;margin-top: 10px;cursor: pointer;" onclick="hideAndShow(2)">去注册</a>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        <button type="button" class="btn btn-primary">登录</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<!-- 注册模态框 -->
+		<div class="modal fade" tabindex="-1" role="dialog" id="registModal" >
+		  <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
+		    <div class="modal-content">
+		      <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
+		        <h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">手机号注册</h4>
+		      </div>
+		      <div class="modal-body">
+		        <!--<p>One fine body&hellip;</p>-->
+		        <div style="margin: 8px auto;width: 220px;height: 90px;">
+		        	<input class="form-control" style="margin-bottom: 10px;border-radius: 1px;" placeholder="请输入手机号"/>
+		        	<input class="form-control" style="border-radius: 1px;" placeholder="请输入密码"/>
+		        	
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		      	<a style="float: left;margin-top: 10px;cursor: pointer;" onclick="hideAndShow(1)" >去登录</a>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        <button type="button" class="btn btn-primary">注册</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+<!-- 发送动态模态框 -->
+<div class="modal fade" tabindex="-1" role="dialog" id="modal1" >
+  <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
+        <h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">分享</h4>
+      </div>
+      <div class="modal-body">
+        <!--<p>One fine body&hellip;</p>-->
+        <div style="width: 100%;padding: 7px 28px;height: 200px;">
+        	<div style="border: 1px solid #d9d9d9;border-radius: 2px;">
+        		<textarea style="resize: none;height: 100px;border: none;" class="form-control" placeholder="一起聊聊吧~"></textarea>
+        		<div style="height: 42px;width: 100%;border-top: 1px solid #d9d9d9;margin: 5px 0px;">
+        			<div class="addMusicBar" style="padding: 8px 10px;position: absolute;width: 83%;cursor: pointer;">
+        				<img src="img/1420569024374784.jpg" width="30" height="30" style="float: left;" />
+        				<span style="float: left;margin-left: 10px;line-height: 31px;color: #999;">给动态配上音乐</span>
+						<img src="img/add.png" style="float: right;margin-top: 6px;"/>
+        			</div>
+        		</div>
+        	</div>
+        	<div style="height: 35px;width: 100%; padding: 5px 0px;">
+        		<div style="float: left">
+					<img src="img/biaoqing.png">
+				</div>
+				
+				<div style="float: left;margin-left: 10px;">
+					<img src="img/photoIcon.png" />
+				</div>
+				<div style="float: right;">
+					<span style="color: #999;">140</span>
+				</div>
+        	</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">分享</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 动态中选择音乐模态框 -->
+<div class="modal fade" tabindex="-1" role="dialog" id="selectMusicModal" >
+	<div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
+		<div class="modal-content">
+			<div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
+				<h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">分享</h4>
+			</div>
+			<div class="modal-body">
+				<p>One fine body&hellip;</p>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary">分享</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div style="margin: 0px auto; width: 980px;">
+<div style="float: left;width: 100%;margin-right: -300px;background-color: #fcfdf8;border:solid;border-width: 0 1px 0 1px;border-color: #d3d3d3">
+    <div style="float: left;padding: 20px 30px; width: 680px;margin-right: 300px;border-right:1px solid #d3d3d3; ">
+		<div style="">
+			<div style="height: 40px;border-bottom: 2px solid #C7254E;">
+				<div style="float: left;"> <font style="font-size: 24px;">动态</font></div>
+				<div style="float:right;height: 40px; padding:8px 0px;">
+					<!--<button class="btn btn-default" style="float: left;margin:0px 5px;border-radius:25px;">地方aaaa</button>-->
+					<div class="mycss" data-toggle="modal" data-target="#modal1" style="width: 83px;float: left;margin:0px 0px; border: 1px solid #d3d3d3;border-radius: 25px;padding:0px 9px;cursor:pointer;">
+						<img src="img/writeIcon.png" style="width: 12px;"/>
+						发动态
+					</div>
+					<!--<div class="mycss" style="width: 70px;float: left;margin:0px 5px; border: 1px solid #d3d3d3;border-radius: 25px;padding:0px 9px;cursor:pointer;">s发动态</div>-->
+				</div>
+			</div>
+			<div style="">
+				<ul style="list-style: none;padding: 0px;">
+					<!-- dongtaili start -->
+					<li style="padding: 20px 0;border-bottom: 1px solid #d3d3d3;">
+						<div class="media">
+							<div class="media-left">
+								<a href="#">
+									<img src="img/1420569024374784.jpg" width="45px" height="45px" />
+								</a>
+							</div>
+							<div class="media-body">
+								
+								<div class="media-heading">
+									<a href="#">网易云音乐</a>
+									<div id="toFouce" class="addMusicBar" style="float: right;border: 1px solid #d3d3d3; border-radius: 3px; height: 25px;width: 56px;font-size: 12px;padding: 4px 7px;cursor: pointer;" onclick="focusPeople()">
+										<span class="glyphicon glyphicon-plus" style="color: #c2240c;" aria-hidden="true"></span>
+										关注
+									</div>
+									<div id="focused" hidden="hidden" style="float: right;border: 1px solid #d3d3d3; border-radius: 3px; height: 25px;width: 67px;font-size: 12px;padding: 4px 7px;">
+										<img src="img/choose.png" width="10px" />
+										已关注
+									</div>
+								</div>
+								<div class="media-heading">
+									<font color="#999">最近</font>
+								</div>
+								
+								<div style="">
+									<div class="wenzi" ><!--style="height:100px;background-color: #A94442;"-->
+										<p>20年前的《旺角卡门》</p>
+										<br>
+										<p>华仔很帅，曼玉很嫩，学友却活成了表情包。</p>
+									</div>
+									<div class="music" style="height:60px;background-color: #f5f5f5;margin-top: 5px;padding: 10px 10px;">
+										
+										<div class="media">
+											<div class="media-left">
+												<a href="#">
+													<div style="float: left; position: relative; width: 40px; height: 40px;padding: 5px 5px; background: #FFFFFF url(img/18612532836958686.jpg) no-repeat;cursor: pointer;">
+														<div class="sb_dt_songimg_ze" style="position: absolute;top: 0;left: 0;width: 40px;height: 40px;"></div>
+														<img src="img/sb_dt_song_img.png" />
+													</div>
+												</a>
+											</div>
+											<div class="media-body">
+												<div class="media-heading" style="margin-bottom: 2px">
+													激情
+												</div>
+												<a href="#"><font style="color: #666;">林忆莲</font></a>
+											</div>
+										</div>
+										
+									</div>
+									<div class="image" style="margin-top: 5px;">
+										<!--图片的显示有规律，当只有一张时，min-width=170px;max-height=338px;-->
+										<!--当一张以上时，以100宽100高显示 -->
+										<div class="docs-galley">
+										      <ul class="docs-pictures clearfix" style="padding-right:35%">
+										        <li style="width:110px;margin-left: 4px;margin-top: 4px;"><img data-original="images/tibet-1.jpg" src="images/thumbnails/tibet-1.jpg" alt="Cuo Na Lake"></li>
+										        <li style="width:110px;margin-left: 4px;margin-top: 4px;"><img data-original="images/tibet-2.jpg" src="images/thumbnails/tibet-2.jpg" alt="Tibetan Plateau"></li>
+										        <li style="width:110px;margin-left: 4px;margin-top: 4px;"><img data-original="images/tibet-3.jpg" src="images/thumbnails/tibet-3.jpg" alt="Jokhang Temple"></li>
+										        <li style="width:110px;margin-left: 4px;margin-top: 4px;"><img data-original="images/tibet-4.jpg" src="images/thumbnails/tibet-4.jpg" alt="Potala Palace 1"></li>
+										        <li style="width:110px;margin-left: 4px;margin-top: 4px;"><img data-original="images/tibet-5.jpg" src="images/thumbnails/tibet-5.jpg" alt="Potala Palace 2"></li>
+										        <li style="width:110px;margin-left: 4px;margin-top: 4px;"><img data-original="images/tibet-6.jpg" src="images/thumbnails/tibet-6.jpg" alt="Potala Palace 3"></li>
+										        <li style="width:110px;margin-left: 4px;margin-top: 4px;"><img data-original="images/tibet-7.jpg" src="images/thumbnails/tibet-7.jpg" alt="Lhasa River"></li>
+										        <li style="width:110px;margin-left: 4px;margin-top: 4px;"><img data-original="images/tibet-8.jpg" src="images/thumbnails/tibet-8.jpg" alt="Namtso 1"></li>
+										        <li style="width:110px;margin-left: 4px;margin-top: 4px;"><img data-original="images/tibet-9.jpg" src="images/thumbnails/tibet-9.jpg" alt="Namtso 2"></li>
+										      </ul>
+										</div>
+									</div>
+									<div class="mv" style="margin-top: 5px"></div>
+									<div class="three" style="height:20px;margin-right: 15px; margin-top: 18px;">
+										<div style="float: right">
+											<div style="float: left;">
+												<a href="#">
+													<img src="img/bignice.png" style="width: 15px;" />
+													<span style="font-size: 13px;">(120)</span>
+												</a>
+											</div>
+											<span style="margin: 0px 10px;float: left;color: #c7c7c7;">|</span>
+											<div style="float: left;">
+												<a href="#">
+													<span style="font-size: 13px;">转发(120)</span>
+												</a>
+											</div>
+											<span style="margin: 0px 10px;float: left;color: #c7c7c7;">|</span>
+											<div style="float: left;">
+												<a href="#collapse1" data-toggle="collapse">
+													<span style="font-size: 13px;">评论(3)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="collapse" id="collapse1" style="margin-top: 5px;">
+										<div style="float:right;margin-top: -10px;margin-right: 46px;position: relative;">
+											<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
+											<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
+										</div>
+										<div class="well">
+											<div style="">
+												<div style="margin-bottom: 20px;">
+													<textarea class="form-control" style="height: 70px; resize: none;margin-bottom: 5px;" placeholder="评论"></textarea>
+													<div style="padding-top: 6px;padding-bottom: 20px;">
+														<div style="float: left">
+															<img src="img/biaoqing.png">
+														</div>
+														<div style="float:right">
+															<label style="margin-right: 10px;padding-top:2px;color: #999;font-weight: 400;">140</label>
+															<div style="float: right; background-color: #286090;border-color: #204d74;border-radius: 4px;padding: 2px 9px;color: #FFFFFF;">评论</button></div>
+														</div>
+													</div>
+												</div>
+												<div style="">
+													<span>精彩评论</span>
+													
+													<ul style="list-style: none;padding-left: 0px;">
+														<!-- start li-->
+														<li>
+															<div style="padding: 15px 0px;border-bottom: 1px dotted #ccc;border-top: 1px dotted #ccc;">
+														<div class="media">
+															<div class="media-left">
+																<img src="img/18612532836958686.jpg" width="40" height="40"/>
+															</div>
+															<div class="media-body">
+																<div class="media-heading" style="margin-bottom: 10px;"><a href="#">郭采洁</a>：假面男孩：这些场面见得多了，开心不起来</div>
+																<div style="width: 100%; float: left">
+																	<font style="float: left;color: #999;">9月11日 11:13</font>
+																	<div style="float: right">
+																		<div style="float: left;border-right: 1px solid #d3d3d3;margin-right: 10px;padding-right: 5px;">
+																			<a href="#">
+																				<img src="img/bignice.png" style="width: 15px;" />
+																				<span>(120)</span>
+																			</a>
+																		</div>
+																		<div style="float: left;"><a href="#collapse2" data-toggle="collapse"><font style="color: #666;font-size: 13px;">回复</font></a> </div>
+																		
+																	</div>
+																</div>
+																<div class="collapse" id="collapse2" style="margin-top: 41px;position: relative;">
+																	<div style="float:right;margin-top: -10px;margin-right: 22px;position: relative;">
+																		<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
+																		<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
+																	</div>
+																	<div class="well">
+																		<textarea class="form-control" style="height: 35px;resize:none">回复郭采洁:</textarea>
+																		<div style="padding-top: 6px;padding-bottom: 20px;">
+																			<div style="float: left">
+																				<img src="img/biaoqing.png">
+																			</div>
+																			<div style="float:right">
+																				<label style="margin-right: 10px;padding-top:2px;color: #999;font-weight: 400;">140</label>
+																				<div style="float: right; background-color: #286090;border-color: #204d74;border-radius: 4px;padding: 2px 9px;color: #FFFFFF;">评论</button></div>
+																			</div>
+																		</div>	
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+														</li>
+														<!-- end li  -->
+														<li>
+															<div style="padding: 15px 0px;border-bottom: 1px dotted #ccc;border-top: 1px dotted #ccc;">
+														<div class="media">
+															<div class="media-left">
+																<img src="img/109951163547149452.jpg" width="40" height="40"/>
+															</div>
+															<div class="media-body">
+																<div class="media-heading" style="margin-bottom: 10px;"><a href="#">明眸月来</a>：太美了这姑娘 18岁诶 美的不要不要的</div>
+																<div style="width: 100%; float: left">
+																	<font style="float: left;color: #999;">9月10日 10:13</font>
+																	<div style="float: right">
+																		<div style="float: left;border-right: 1px solid #d3d3d3;margin-right: 10px;padding-right: 5px;">
+																			<a href="#">
+																				<img src="img/bignice.png" style="width: 15px;" />
+																				<span>(100)</span>
+																			</a>
+																		</div>
+																		<div style="float: left;"><a href="#collapse2" data-toggle="collapse"><font style="color: #666;font-size: 13px;">回复</font></a> </div>
+																		
+																	</div>
+																</div>
+																<div class="collapse" id="collapse2" style="margin-top: 41px;position: relative;">
+																	<div style="float:right;margin-top: -10px;margin-right: 22px;position: relative;">
+																		<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
+																		<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
+																	</div>
+																	<div class="well">
+																		<textarea class="form-control" style="height: 35px;resize:none">回复郭采洁:</textarea>
+																		<div style="padding-top: 6px;padding-bottom: 20px;">
+																			<div style="float: left">
+																				<img src="img/biaoqing.png">
+																			</div>
+																			<div style="float:right">
+																				<label style="margin-right: 10px;padding-top:2px;color: #999;font-weight: 400;">140</label>
+																				<div style="float: right; background-color: #286090;border-color: #204d74;border-radius: 4px;padding: 2px 9px;color: #FFFFFF;">评论</button></div>
+																			</div>
+																		</div>	
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+														</li>
+														<li>
+															<div style="padding: 15px 0px;border-bottom: 1px dotted #ccc;border-top: 1px dotted #ccc;">
+														<div class="media">
+															<div class="media-left">
+																<img src="img/109951163522262202.jpg" width="40" height="40"/>
+															</div>
+															<div class="media-body">
+																<div class="media-heading" style="margin-bottom: 10px;"><a href="#">究竟何为钟情</a>：BGM是BigBang的blue啊</div>
+																<div style="width: 100%; float: left">
+																	<font style="float: left;color: #999;">9月8日 7:13</font>
+																	<div style="float: right">
+																		<div style="float: left;border-right: 1px solid #d3d3d3;margin-right: 10px;padding-right: 5px;">
+																			<a href="#">
+																				<img src="img/bignice.png" style="width: 15px;" />
+																				<span>(80)</span>
+																			</a>
+																		</div>
+																		<div style="float: left;"><a href="#collapse2" data-toggle="collapse"><font style="color: #666;font-size: 13px;">回复</font></a> </div>
+																		
+																	</div>
+																</div>
+																<div class="collapse" id="collapse2" style="margin-top: 41px;position: relative;">
+																	<div style="float:right;margin-top: -10px;margin-right: 22px;position: relative;">
+																		<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
+																		<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
+																	</div>
+																	<div class="well">
+																		<textarea class="form-control" style="height: 35px;resize:none">回复郭采洁:</textarea>
+																		<div style="padding-top: 6px;padding-bottom: 20px;">
+																			<div style="float: left">
+																				<img src="img/biaoqing.png">
+																			</div>
+																			<div style="float:right">
+																				<label style="margin-right: 10px;padding-top:2px;color: #999;font-weight: 400;">140</label>
+																				<div style="float: right; background-color: #286090;border-color: #204d74;border-radius: 4px;padding: 2px 9px;color: #FFFFFF;">评论</button></div>
+																			</div>
+																		</div>	
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- dongtaili end -->
+					<!-- dongtaili start -->
+					<li style="padding: 20px 0;border-bottom: 1px solid #d3d3d3;">
+						<div class="media">
+							<div class="media-left">
+								<a href="#">
+									<img src="img/1420569024374784.jpg" width="45px" height="45px" />
+								</a>
+							</div>
+							<div class="media-body">
+								
+								<div class="media-heading">
+									<a href="#">网易云音乐</a>
+									<div style="float: right;border: 1px solid #d3d3d3; height: 21px;width: 50px;margin-right: 10px;padding: 0px 10px;">
+										关注
+									</div>
+								</div>
+								<div class="media-heading">
+									<font color="#999">最近</font>
+								</div>
+								
+								<div style="">
+									<div class="wenzi" ><!--style="height:100px;background-color: #A94442;"-->
+										<p>20年前的《旺角卡门》</p>
+										<br>
+										<p>华仔很帅，曼玉很嫩，学友却活成了表情包。</p>
+									</div>
+									<div class="music" style="height:60px;background-color: #f5f5f5;margin-top: 5px;padding: 10px 10px;">
+										
+										<div class="media">
+											<div class="media-left">
+												<a href="#">
+													<div style="float: left; position: relative; width: 40px; height: 40px;padding: 5px 5px; background: #FFFFFF url(img/18612532836958686.jpg) no-repeat;cursor: pointer;">
+														<div class="sb_dt_songimg_ze" style="position: absolute;top: 0;left: 0;width: 40px;height: 40px;"></div>
+														<img src="img/sb_dt_song_img.png" />
+													</div>
+												</a>
+											</div>
+											<div class="media-body">
+												<div class="media-heading" style="margin-bottom: 2px">
+													激情
+												</div>
+												<a href="#"><font style="color: #666;">林忆莲</font></a>
+											</div>
+										</div>
+										
+									</div>
+									<div class="image" style="margin-top: 5px;">
+										<!--图片的显示有规律，当只有一张时，min-width=170px;max-height=338px;-->
+										<!--当一张以上时，以100宽100高显示 -->
+										<div class="docs-galley">
+										      <ul class="docs-pictures clearfix" style="padding-right:35%">
+										        <li style=" margin-left: 4px;margin-top: 4px;width: auto; height:auto ;"><img data-original="images/tibet-1.jpg" style="max-height:338px;min-width: 170px;height: auto;" src="images/thumbnails/tibet-6.jpg" alt="Cuo Na Lake"></li>
+										         </ul>
+										</div>
+									</div>
+									<div class="mv" style="margin-top: 5px"></div>
+									<div class="three" style="height:20px;margin-right: 15px; margin-top: 18px;">
+										<div style="float: right">
+											<div style="float: left;">
+												<a href="#">
+													<img src="img/bignice.png" style="width: 15px;" />
+													<span style="font-size: 13px;">(120)</span>
+												</a>
+											</div>
+											<span style="margin: 0px 10px;float: left;color: #c7c7c7;">|</span>
+											<div style="float: left;">
+												<a href="#">
+													<span style="font-size: 13px;">转发(120)</span>
+												</a>
+											</div>
+											<span style="margin: 0px 10px;float: left;color: #c7c7c7;">|</span>
+											<div style="float: left;">
+												<a href="#collapse3" data-toggle="collapse">
+													<span style="font-size: 13px;">评论(3)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="collapse" id="collapse3" style="margin-top: 5px;">
+										<div style="float:right;margin-top: -10px;margin-right: 46px;position: relative;">
+											<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
+											<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
+										</div>
+										<div class="well">
+											<div style="">
+												<div style="margin-bottom: 20px;">
+													<textarea class="form-control" style="height: 70px; resize: none;margin-bottom: 5px;" placeholder="评论"></textarea>
+													<div style="padding-top: 6px;padding-bottom: 20px;">
+														<div style="float: left">
+															<img src="img/biaoqing.png">
+														</div>
+														<div style="float:right">
+															<label style="margin-right: 10px;padding-top:2px;color: #999;font-weight: 400;">140</label>
+															<div style="float: right; background-color: #286090;border-color: #204d74;border-radius: 4px;padding: 2px 9px;color: #FFFFFF;">评论</button></div>
+														</div>
+													</div>
+												</div>
+												<div style="">
+													<span>精彩评论</span>
+													
+													<ul style="list-style: none;padding-left: 0px;">
+														<!-- start li-->
+														<li>
+															<div style="padding: 15px 0px;border-bottom: 1px dotted #ccc;border-top: 1px dotted #ccc;">
+														<div class="media">
+															<div class="media-left">
+																<img src="img/18612532836958686.jpg" width="40" height="40"/>
+															</div>
+															<div class="media-body">
+																<div class="media-heading" style="margin-bottom: 10px;"><a href="#">郭采洁</a>：假面男孩：这些场面见得多了，开心不起来</div>
+																<div style="width: 100%; float: left">
+																	<font style="float: left;color: #999;">9月11日 11:13</font>
+																	<div style="float: right">
+																		<div style="float: left;border-right: 1px solid #d3d3d3;margin-right: 10px;padding-right: 5px;">
+																			<a href="#">
+																				<img src="img/bignice.png" style="width: 15px;" />
+																				<span>(120)</span>
+																			</a>
+																		</div>
+																		<div style="float: left;"><a href="#collapse4" data-toggle="collapse"><font style="color: #666;font-size: 13px;">回复</font></a> </div>
+																		
+																	</div>
+																</div>
+																<div class="collapse" id="collapse4" style="margin-top: 41px;position: relative;">
+																	<div style="float:right;margin-top: -10px;margin-right: 22px;position: relative;">
+																		<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
+																		<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
+																	</div>
+																	<div class="well">
+																		<textarea class="form-control" style="height: 35px;resize:none">回复郭采洁:</textarea>
+																		<div style="padding-top: 6px;padding-bottom: 20px;">
+																			<div style="float: left">
+																				<img src="img/biaoqing.png">
+																			</div>
+																			<div style="float:right">
+																				<label style="margin-right: 10px;padding-top:2px;color: #999;font-weight: 400;">140</label>
+																				<div style="float: right; background-color: #286090;border-color: #204d74;border-radius: 4px;padding: 2px 9px;color: #FFFFFF;">评论</button></div>
+																			</div>
+																		</div>	
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+														</li>
+														<!-- end li  -->
+														<li>
+															<div style="padding: 15px 0px;border-bottom: 1px dotted #ccc;border-top: 1px dotted #ccc;">
+														<div class="media">
+															<div class="media-left">
+																<img src="img/109951163547149452.jpg" width="40" height="40"/>
+															</div>
+															<div class="media-body">
+																<div class="media-heading" style="margin-bottom: 10px;"><a href="#">明眸月来</a>：太美了这姑娘 18岁诶 美的不要不要的</div>
+																<div style="width: 100%; float: left">
+																	<font style="float: left;color: #999;">9月10日 10:13</font>
+																	<div style="float: right">
+																		<div style="float: left;border-right: 1px solid #d3d3d3;margin-right: 10px;padding-right: 5px;">
+																			<a href="#">
+																				<img src="img/bignice.png" style="width: 15px;" />
+																				<span>(100)</span>
+																			</a>
+																		</div>
+																		<div style="float: left;"><a href="#collapse2" data-toggle="collapse"><font style="color: #666;font-size: 13px;">回复</font></a> </div>
+																		
+																	</div>
+																</div>
+																<div class="collapse" id="collapse2" style="margin-top: 41px;position: relative;">
+																	<div style="float:right;margin-top: -10px;margin-right: 22px;position: relative;">
+																		<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
+																		<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
+																	</div>
+																	<div class="well">
+																		<textarea class="form-control" style="height: 35px;resize:none">回复郭采洁:</textarea>
+																		<div style="padding-top: 6px;padding-bottom: 20px;">
+																			<div style="float: left">
+																				<img src="img/biaoqing.png">
+																			</div>
+																			<div style="float:right">
+																				<label style="margin-right: 10px;padding-top:2px;color: #999;font-weight: 400;">140</label>
+																				<div style="float: right; background-color: #286090;border-color: #204d74;border-radius: 4px;padding: 2px 9px;color: #FFFFFF;">评论</button></div>
+																			</div>
+																		</div>	
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+														</li>
+														<li>
+															<div style="padding: 15px 0px;border-bottom: 1px dotted #ccc;border-top: 1px dotted #ccc;">
+														<div class="media">
+															<div class="media-left">
+																<img src="img/109951163522262202.jpg" width="40" height="40"/>
+															</div>
+															<div class="media-body">
+																<div class="media-heading" style="margin-bottom: 10px;"><a href="#">究竟何为钟情</a>：BGM是BigBang的blue啊</div>
+																<div style="width: 100%; float: left">
+																	<font style="float: left;color: #999;">9月8日 7:13</font>
+																	<div style="float: right">
+																		<div style="float: left;border-right: 1px solid #d3d3d3;margin-right: 10px;padding-right: 5px;">
+																			<a href="#">
+																				<img src="img/bignice.png" style="width: 15px;" />
+																				<span>(80)</span>
+																			</a>
+																		</div>
+																		<div style="float: left;"><a href="#collapse2" data-toggle="collapse"><font style="color: #666;font-size: 13px;">回复</font></a> </div>
+																		
+																	</div>
+																</div>
+																<div class="collapse" id="collapse2" style="margin-top: 41px;position: relative;">
+																	<div style="float:right;margin-top: -10px;margin-right: 22px;position: relative;">
+																		<em style="color: #e3e3e3;font-family:cursive;display: block;position: absolute;">◆</em>
+																		<em style="color: #f5f5f5;display: block; top: 1px;position: absolute; font-family:cursive;">◆</em>
+																	</div>
+																	<div class="well">
+																		<textarea class="form-control" style="height: 35px;resize:none">回复郭采洁:</textarea>
+																		<div style="padding-top: 6px;padding-bottom: 20px;">
+																			<div style="float: left">
+																				<img src="img/biaoqing.png">
+																			</div>
+																			<div style="float:right">
+																				<label style="margin-right: 10px;padding-top:2px;color: #999;font-weight: 400;">140</label>
+																				<div style="float: right; background-color: #286090;border-color: #204d74;border-radius: 4px;padding: 2px 9px;color: #FFFFFF;">评论</button></div>
+																			</div>
+																		</div>	
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- dongtaili end -->
+				</ul>
+			</div>
+		</div>
+    </div>
+    
+</div>
+
+<div style="float: right;width:300px;border: 1px solid #d3d3d3;border-bottom: 0px; padding: 0px 1px;">
+        <div style="height: 193px;width: 100%;background-color: #f6f6f6;background: url(img/backgroundSelf.png) no-repeat 0 0; ">
+        	<div style="width: 100%;height: 193px;padding-top: 38px;padding-left: 30px;padding-bottom: 20px;">
+        		<div class="media">
+        			<div class="media-left">
+        				<img src="img/109951163547149452.jpg" class="thumbnail" style="padding: 2px;border-radius: 0px;width: 68px;height: 68px;"/>
+        			</div>
+        			<div class="media-body">
+        				<div class="media-heading">
+        					<a href="#"><font style="color: #333;font-weight: 700;">郭采洁</font> </a> 
+        				</div>
+        			</div>
+        		</div>
+        		<div style="height: 100px;">
+        			<div style="border-right: 1px solid #c2c2c2;float: left;padding:0px 20px;padding-left: 0px;">
+        				<a href="#">
+        					<em style="width: 100%;color: #666;font-size: 20px;font-weight: 500;">5</em>
+        					<i style="width: 100%;color: #666;font-size: 12px;font-weight: 500;">动态</label>
+        				</a>
+        			</div>
+        			<div style="border-right: 1px solid #c2c2c2;float: left;padding:0px 20px;">
+        				<a href="#">
+        					<em style="width: 100%;color: #666;font-size: 20px;font-weight: 500;">10</em>
+        					<i style="width: 100%;color: #666;font-size: 12px;font-weight: 500;">关注</label>
+        				</a>
+        			</div>
+        		
+        			<div style="float: left;padding-left: 20px;">
+        				<a href="#">
+        					<em style="width: 100%;color: #666;font-size: 20px;font-weight: 500;">0</em>
+        					<i style="width: 100%;color: #666;font-size: 12px;font-weight: 500;">粉丝</label>
+        				</a>
+        			</div>
+        			<div></div>
+        		</div>
+        		
+        	</div>
+        </div>
+        <div style="width: 100%;padding: 20px 30px;">
+        	<div style="width: 100%;">
+        		<div style="width: 100%;border-bottom: 1px solid #dcdcdc;float: left;">
+        			<label style="float: left;color: #333;">明星用户</label>
+        			<a href="#" style="float: right;">换一批</a>
+        		</div>
+        		<div style="padding-bottom: 15px;float: left;">
+        		<ul style="list-style: none;float: left;padding-left: 0px;">
+        			<li style="float: left;margin-top: 15px;">
+        				<div class="media">
+        					<div class="media-left">
+        						<img src="img/109951163547149452.jpg" width="45" height="45">
+        					</div>
+							<div class="media-body">
+								<div class="media-heading"><a href="#" style="color: #333;">郭采洁</a> </div>
+								
+								<div id="toFouce2" class="addMusicBar" style="float: right;border: 1px solid #d3d3d3; border-radius: 3px; height: 25px;width: 56px;font-size: 12px;padding: 4px 7px;cursor: pointer;" onclick="focusPeople()">
+									<span class="glyphicon glyphicon-plus" style="color: #c2240c;" aria-hidden="true"></span>
+									关注
+								</div>
+							</div>
+        				</div>
+        			</li>
+        			<li style="float: left;margin-top: 15px;">
+        				<div class="media">
+        					<div class="media-left">
+        						<img src="img/s_img/g14.jpg" width="45" height="45">
+        					</div>
+							<div class="media-body">
+								<div class="media-heading"><a href="#" style="color: #333;">苏乞儿</a> </div>
+								
+								<div id="toFouce2" class="addMusicBar" style="float: right;border: 1px solid #d3d3d3; border-radius: 3px; height: 25px;width: 56px;font-size: 12px;padding: 4px 7px;cursor: pointer;" onclick="focusPeople()">
+									<span class="glyphicon glyphicon-plus" style="color: #c2240c;" aria-hidden="true"></span>
+									关注
+								</div>
+							</div>
+        				</div>
+        			</li>
+        		</ul>
+        		</div>
+        	</div>
+        </div>
+</div>
+</div>
+<!--底部-->
+<iframe src="base.html"></iframe>
+<script>
+    function submitComment(){
+        $('#coll').collapse('hide');
+    }
+    function focusPeople(){
+    	$('#toFouce').hide();
+    	$('#focused').show();
+    	//$('#focused').hidden("false");
+    }
+    function hideAndShow(kind){
+		if(kind == 1){
+			//show the login and hide the regist
+			$('#registModal').modal('hide');
+			$('#loginModal').modal('toggle');
+		}
+		else if(kind == 2){
+			$('#loginModal').modal('hide');
+			$('#registModal').modal('toggle');
+		}
+	}
+</script>
+</body>
+</html>
