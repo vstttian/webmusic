@@ -1,0 +1,153 @@
+.w_border{
+	border-right: 1px solid gray;
+}
+.w_main{
+	background: white;
+}
+.w_name{
+	padding: 30px 0 10px  30px;
+}
+.w_img{
+	padding-left: 30px;
+}
+.w_btn{
+	display: block;
+    position: absolute;
+    bottom: 18px;
+    right: 60px;
+    color: white;
+    
+ 	background: RGB(50,50,50);
+ 	opacity: 0.7;
+    height: 32px;
+ 	margin-right: 40px;;
+}
+
+.w_btn1{
+	display: block;
+    position: absolute;
+    bottom: 18px;
+    right: 20px;
+    color: white;
+    padding: 5px;
+    padding-right: 8px;
+ 	background: RGB(50,50,50);
+ 	opacity: 0.7;
+    height: 32px;
+ 
+}
+
+.w_btn:hover{
+	font-weight: bolder;
+	color: white;
+}
+.w_btn1:hover{
+	font-weight: bolder;
+	color: white;
+}
+.w_nav{
+	padding:30px;
+	margin-top:270px;;
+}
+.w_nav ul li{
+	width:150px;
+	text-align: center;
+}
+.w_btngroup{
+	padding: 0 30px;;
+}
+.w_btngroup1{
+	
+}
+ul li{
+	list-style: none;
+	color: black;
+	font-family: "微软雅黑";
+}
+.w_song1 a{
+	color:#333;
+}
+.w_song1 a:hover{
+	color: black;
+	font-weight: bold;
+}
+.w_con a{
+	padding-right: 7px;;
+}
+.w_person h2{
+	padding: 5px 30px;
+	font-family: "黑体";
+	font-size:  17px;
+	font-weight: bold;
+}
+.w_person p{
+	color: #666;
+	padding: 0 24px;
+    text-indent: 2em
+}
+.w_ge,.w_ge1{
+	padding-left:25px; 
+
+}
+#w_ge{
+	margin-top:25px;
+	background: white;
+	padding: 20px;
+	
+}
+.w_ge1{
+	padding-top: 10px;
+}
+.w_btn2{
+	margin-left:-64px;
+}
+html ,body{height:100%;display: block;}
+.w_left{
+	background: RGB(249,249,249);
+	margin-top:25px;
+	border:1px solid gainsboro;
+	margin-right:-15px;
+	height:100%;
+}
+.w_right{
+	background: white;
+}
+.w_h2{
+	padding: 0 10px 12px 15px;
+    font-size: 14px;
+    color: #000;
+    font-weight: bolder;
+}
+.w_btn3{
+	margin-top:16px;
+}
+.w_down:hover{
+	cursor: pointer;
+}
+.w_down1:hover{
+	cursor: pointer;
+}
+ul li:hover{
+	cursor: pointer;
+}
+.w_active{
+	background: rgb(230,230,230);
+}
+.w_lag{
+	background: red;
+	font-family: "微软雅黑";
+	padding: 5px;
+	color: white;
+}
+.w_songName{
+	font-family: "microsoft yahei";
+	letter-spacing:5px;
+	font-weight:lighter;
+}
+.w_sign li a{
+	padding:1px 14px;
+	color: gray;
+}
+.w_song2{
+	margin-top:40px;;
+}
