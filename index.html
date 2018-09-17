@@ -7,89 +7,17 @@
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/kang_main.css">
-
-
+    <script src="js/kang_main.js" defer="defer"></script>
 </head>
+    <script>
+        $(function () {
+            $("#head").load("/webmusic/header.html");
+        })
+    </script>
 <body  style="background-color:#f5f5f5">
-<header >
-
-    <nav class="navbar navbar-inverse" style="height:70px">
-        <div class="container-fluid">
-            <div class="navbar-header"><!--导航栏按钮-->
-
-                <!--导航栏logo-->
-                <a class="logo"  style=""
-                   href="">Webmusic</a>
-            </div>
-            <div class="cpllapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav" style="margin: 8px 35px 0 35px">
-                    <!-- <li class="dropdown" style="line-height:205px"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                     role="button" aria-haspopup="true" aria-expanded="false">发现音乐<span class="caret"></span></a>
-                     <ul class="dropdown-menu"><li><a href="#">推荐</a> </li>
-                         <li><a href="#">推荐</a> </li>
-                         <li><a href="">排行榜</a> </li>
-                         <li><a href="#">歌单</a> </li>
-                         <li><a href="#">歌手</a> </li>
-                     </ul>
-
-                     </li>-->
-                    <li><a hraf="#">发现音乐</a></li>
-                    <li><a hraf="#">我的音乐</a></li>
-                    <li><a href="#">朋友</a> </li>
-                </ul>
-                <!--登录前-->
-                <ul class="nav navbar-nav navbar-right" style="margin:7px  260px 0px 0px;display: none " >
-                    <li><a href="#">登陆</a></li>
-                    <li><a href="#">注册</a></li>
-                </ul>
-                </li>
-                </ul>
-                <!--登陆后-->
-                <div class="m-tophead f-pr j-tflag"   style="display: block;margin:15px  300px 0 0px; z-index:999; ">
-                    <div class="head f-fl f-pr myvia" id="myvia">
-                        <img src="http://p1.music.126.net/y3PpxBSsVhEqYDtm4-RDUw==/528865129841813.jpg?param=30y30">
-                    </div>
-                    <a href="/user/home?id=" class=" f-hide">Always-与我常在</a>
-
-                    <div class="m-tlist m-tlist-lged  " id="playmyinfo" style="display: none; margin-top: -8px"><ul class="f-cb lb mg">
-                        <li><a hidefocus="true" class="" href="/user/home?id=115548632" style="color: #ece7e2;">
-                            <i class="itm-2"></i>我的主页</a></li>
-                        <li><a href="/msg/#/at" class="" style="color: #ece7e2;">
-                            <i class=""></i>我的消息<span class="m-topmsg f-pa f-hide j-uflag"></span></a></li>
-                        <li><a href="/user/level" data-action="viewLevel" class="" style="color: #ece7e2;">
-                            <i class=""></i>我的等级</a></li>
-                        <li><a href="/member" class="" style="color: #ece7e2;">
-                            <i class=""></i>VIP会员</a></li>
-                        <li><a hidefocus="true" class="" href="/user/update" style="color: #ece7e2;">
-                            <i class=""></i>个人设置</a></li>
-                        <li><a hidefocus="true" class="" href="#" data-action="logout" style="color: #ece7e2;">
-                            <i class=""></i>退出</a></li>
-                    </ul>
-                    </div></div>
 
 
-                <!--搜索框表单-->
-                <form class="navbar-form navbar-right" style="margin:13px  0px 0px 0px ">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="音乐/用户">
-                    </div>
-                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-    <div  class="m-subnav" style="margin-top: -20px">
-        <ul class="nav" style="margin:0 0 0 245px;">
-            <li><a hidefocus="true" data-module="discover" href="index.html" class="z-slt">推荐</a></li>
-            <li><a hidefocus="true" data-module="toplist" href="/discover/toplist">排行榜</a></li>
-            <li><a hidefocus="true" data-module="playlist" href="allsonglist.html">歌单</a></li>
-            <li><a hidefocus="true" data-module="djradio" href="/discover/djradio">主播电台</a></li>
-            <li><a hidefocus="true" data-module="artist" href="/discover/artist">歌手</a></li>
-            <li><a hidefocus="true" data-module="album" href="/discover/album">新碟上架</a></li>
-        </ul></div>
-</header>
-
+    <div id="head"></div>
 
 <!--
 作者：1172470050@qq.com

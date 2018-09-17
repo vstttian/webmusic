@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/wang.css" />
+		<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/wang.js"></script>
+		<link rel="stylesheet" href="../../css/kang_main.css">
+		<script src="../../js/kang_main.js" defer="defer"></script>
+		<title></title>
+	</head>
+	<script>
+		$(function(){
+		    $("#page1").load("/webmusic/header.html");
+		})
+	</script>
+	<body style="background: RGB(245,245,245);">
+
+	<!--子康-->
+
+		<div id="page1"></div>
+	<!--子康-->
+
+		<div class="container">
+			<div class="row">
+				
+				<!--页面左-->
+				<div class="col-xs-3 w_left">
+					<div class="row">
+					 	<h2 class="w_h2  col-sm-8"><span class="glyphicon glyphicon-triangle-bottom w_down" style="color: #ccc;padding-right: 10px;"></span>创建的歌单</h2>
+						<!--创建按钮-->
+						 <button class="col-sm-3 btn btn-xs btn-default glyphicon glyphicon-plus w_btn3" data-toggle="modal" data-target="#myModal">创建</button>
+					  	<div class="col-sm-1"></div>
+					</div>
+					
+					 <!--我的歌单-->
+					  <ul id="w_sheet" style="margin-left: -35px;padding-bottom: 10px;margin-top:-5px;">
+					 	<li class="w_active" style="padding: 5px;">
+					 		<div class="media">
+							  <div class="media-left">
+							    <a href="#">
+							      <img class="media-object" src="../../img/10.jpg" alt="...">
+							    </a>
+							  </div>
+							  <div class="media-body">
+							    <h4 class="media-heading" style="font-size: 13px;font-family: '宋体';">我的歌单</h4>
+							    <span style="color: gray;">0首</span>
+							  </div>
+							</div>
+					 	</li>
+					 	
+					 	<li class="" style="padding: 5px;">
+					 		<div class="media">
+							  <div class="media-left">
+							    <a href="#">
+							      <img class="media-object" src="../../img/10.jpg" alt="...">
+							    </a>
+							  </div>
+							  <div class="media-body">
+							    <h4 class="media-heading" style="font-size: 13px;font-family: '宋体';">我的歌单</h4>
+							    <span style="color: gray;">0首</span>
+							  </div>
+							</div>
+					 	</li>
+					 	
+					 	<li class="" style="padding: 5px;">
+					 		<div class="media">
+							  <div class="media-left">
+							    <a href="#">
+							      <img class="media-object" src="../../img/10.jpg" alt="...">
+							    </a>
+							  </div>
+							  <div class="media-body">
+							    <h4 class="media-heading" style="font-size: 13px;font-family: '宋体';">我的歌单</h4>
+							    <span style="color: gray;">0首</span>
+							  </div>
+							</div>
+					 	</li>
+					 </ul>
+					 
+					 
+					 <!--收藏的歌单-->
+					 <div class="row">
+					 	<h2 class="w_h2  col-sm-8" style="margin-top:-10px; ;"><span class="glyphicon glyphicon-triangle-bottom w_down1" style="color: #ccc;padding-right: 10px;"></span>收藏的歌单</h2>
+						<!--创建按钮-->
+						<div class="col-sm-offset-3"></div>
+					  	<div class="col-sm-1"></div>
+					</div>
+					
+					 <!--我的歌单-->
+					  <ul id="w_sheet1" style="margin-left: -35px;">
+					 	<li class="w_active" style="padding: 5px;">
+					 		<div class="media">
+							  <div class="media-left">
+							    <a href="#">
+							      <img class="media-object" src="../../img/10.jpg" alt="...">
+							    </a>
+							  </div>
+							  <div class="media-body">
+							    <h4 class="media-heading" style="font-size: 13px;font-family: '宋体';">我的歌单</h4>
+							    <span style="color: gray;">0首</span>
+							  </div>
+							</div>
+					 	</li>
+					 	
+					 	<li class="" style="padding: 5px;">
+					 		<div class="media">
+							  <div class="media-left">
+							    <a href="#">
+							      <img class="media-object" src="../../img/10.jpg" alt="...">
+							    </a>
+							  </div>
+							  <div class="media-body">
+							    <h4 class="media-heading" style="font-size: 13px;font-family: '宋体';">我的歌单</h4>
+							    <span style="color: gray;">0首</span>
+							  </div>
+							</div>
+					 	</li>
+					 	
+					 	<li class="" style="padding: 5px;">
+					 		<div class="media">
+							  <div class="media-left">
+							    <a href="#">
+							      <img class="media-object" src="../../img/10.jpg" alt="...">
+							    </a>
+							  </div>
+							  <div class="media-body">
+							    <h4 class="media-heading" style="font-size: 13px;font-family: '宋体';">我的歌单</h4>
+							    <span style="color: gray;">0首</span>
+							  </div>
+							</div>
+					 	</li>
+					 </ul>
+					 <!--收藏的歌单-->
+					 
+				</div>
+		
+		<!--弹出框         创建歌单-->
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header" style="background: black;">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel" style="color: white;font-family:'宋体';">创建歌单</h4>
+		      </div>
+			<div class="form-inline">
+		      <div class="modal-body">
+		      	<div class="form-group" style="padding:30px 0 0 30px;;">
+			        <label>歌单名：</label>
+					<input type="text"  class="form-control" style="width:300px;;" id="w_songtext"/>
+					<p id="w_error" style="color: red;padding: 10px;"></p>
+					<p style="margin-top: 0px;color: gray;">可通过“收藏”将音乐添加到新歌单中</p>
+				</div>
+		      </div>
+		     </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		        <button type="button" class="btn btn-primary w_submit">确认</button>
+		      </div>
+		    </div>
+		  </div>
+	</div>
+			
+		
+				<div class="col-xs-9 w_right">
+					<div class="media w_ge1" id="w_ge">
+				  <div class="media-left">
+				    <a href="#">
+				      <img class="media-object img-thumbnail" src="../../img/7.jpg" alt="...">
+				    </a>
+				  </div>
+				  <div class="media-body">
+				  	<div class="row w_ge">
+				  		<div class="col-sm-1">
+				  			<span class="glyphicon glyphicon-comment" style="font-size: 35px;color: red;">
+				  				
+				  			</span>
+				  		</div>
+				  		<div class="col-sm-11">
+				    		<p style="line-height: 24px;font-size: 20px;letter-spacing: 4px;font-family: sans-serif;">奶一口就迷上的欧美优质男嗓</p>
+				    	</div>
+				  	</div>
+				  	
+				  	<div class="row w_ge1">
+				    	<div class="col-sm-1"><img src="../../img/1.png" class="" style="width:30px;height:30px;"></div>
+				    	<div class="col-sm-3"><a href="">懒狗欧美音乐</a></div>
+				    	<div class="col-sm-4" style="color: gray;margin-left: -27px;font-size: 13px;;">2018-08-18 创建</div>
+				    	<div class="col-sm-4"></div>
+				    </div>
+				    
+				    	<!--播放、下载、收藏-->
+					    <div class="row w_ge1">
+							<div class="col-xs-4">
+								<div class="btn-group btn-group-justified" role="group" aria-label="...">
+								  <div class="btn-group" role="group">
+								    <button type="button" class="btn btn-primary btn-sm" style="width: 84px;"><span class="glyphicon glyphicon-play-circle" style="color: white;padding:0 0px;"></span>播放</button>
+								  </div>
+								  <div class="btn-group" role="group">
+								    <button type="button" class="btn btn-primary text-center btn-sm" style="width:30px;"><span>+</span></button>
+								  </div>		
+								</div>
+							</div>
+							<div class="col-xs-3 w_btn2" >
+								<button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus" style="padding: 0 3px;"></span>收藏</button>
+							</div>
+							<div class="col-xs-3 w_btn2">
+								<button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-download-alt" style="padding: 0 3px;"></span>下载</button>
+							</div>
+							<div class="col-xs-3 w_btn2" >
+								<button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit" style="padding: 0 3px;"></span>收藏</button>
+							</div>
+						</div>
+					<!--标签-->
+					<div>
+						<nav aria-label="...">
+							  <ul class="pager w_sign" style="margin-left: -300px; ">
+							  	<li style="color: gray;">标签：</li>
+							    <li><a href="#">欧美</a></li>
+							    <li><a href="#">流行</a></li>
+							     <li><a href="#">英论</a></li>
+							  </ul>
+						</nav>
+					</div>	
+					<!--介绍-->
+					<div>
+					<label style="font-family: sans-serif;color: gray;padding: 0 24px;font-weight: lighter;"> 介绍：不定期安利众多欧美优质男嗓的经典及热门歌曲，奶一口，痴迷沉醉不知归路！来了就想收藏回家慢慢听！！！！ </label>
+					</div>		
+				  </div>
+				  
+				  <!--歌曲列表头-->
+				  <div class="row w_song2">
+				  	<div class="col-xs-2"><span style="font-size: 24px;;color: rgb(51,51,51);font-family: 'microsoft yahei';">歌曲列表</span></div>
+				  	<div class="col-xs-4"><span style="color: gray;padding-top:10px;;;position: absolute;">103首歌</span></div>
+				
+				  	<div class="col-xs-6"><span style="float: right;color: #666;padding-top:10px;">播放：<label style="color: red;">4101241254</label>次</span></div>
+				  </div>
+				  <!--歌曲列表-->
+				  <ul id="w_song" style="margin-left:-59px;margin-right:-22px ;">
+						<table class="table table-hover table-striped" style="margin-top: 10px;">
+						
+						<tr>
+							<td style="border-top: 4px solid red;">
+
+								<li>
+									<div class="row w_song3">
+										<div class="col-xs-1" style="margin: 0 5px;;"></div>
+										
+										
+										<div class="col-xs-4">
+											歌曲标题
+										</div>
+										
+										<div class="col-xs-2 text-center" style="font-size:small;">时长</div>
+										
+										
+										<div class="col-xs-2 text-center"> 歌手</div>
+										
+										<div class="col-xs-2 text-center">专辑</div>
+									</div>
+								</li>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+
+								<li>
+									<div class="row w_song1">
+										<div class="col-xs-1" style="margin: 0 5px;;">1 
+											<a href="#" style="margin-left: 15px;">
+												<span class="glyphicon glyphicon-headphones" ></span>
+											</a></div>
+										<!--<span class="glyphicon glyphicon-headphones"></span>-->
+
+										<!--<div class="col-xs-1">
+											<a href="#">
+												<span class="glyphicon glyphicon-headphones"></span>
+											</a>
+										</div>-->
+										
+										<div class="col-xs-4">
+											<a href="">双影</a>
+											<a href="">
+												<span class="glyphicon glyphicon-facetime-video" style="padding-left: 7px;"></span>
+											</a>
+										</div>
+										
+										<div class="col-xs-2 w_time text-center" style="font-size:small;">04:36</div>
+										<div class="col-xs-2 w_con text-center " style="font-size:small;display: none;">
+											<a class="glyphicon glyphicon-plus" style="color: gray;"></a>
+											<a class="glyphicon glyphicon-trash" style="color: gray;"></a>
+											<a class="glyphicon glyphicon-download-alt" style="color: gray;"></a>
+										</div>
+										
+										<div class="col-xs-2 text-center"> 邓紫棋</div>
+										
+										<div class="col-xs-2 text-center"><a href="#">Star</a></div>
+									</div>
+								</li>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>
+
+								<li>
+									<div class="row w_song1">
+										<div class="col-xs-1" style="margin: 0 5px;;">2 
+											<a href="#" style="margin-left: 15px;">
+												<span class="glyphicon glyphicon-headphones" ></span>
+											</a></div>
+										<!--<span class="glyphicon glyphicon-headphones"></span>-->
+
+										<!--<div class="col-xs-1">
+											<a href="#">
+												<span class="glyphicon glyphicon-headphones"></span>
+											</a>
+										</div>-->
+										
+										<div class="col-xs-4">
+											<a href="">双影</a>
+											<a href="">
+												<span class="glyphicon glyphicon-facetime-video" style="padding-left: 7px;"></span>
+											</a>
+										</div>
+										
+										<div class="col-xs-2 w_time text-center" style="font-size:small;">04:36</div>
+										<div class="col-xs-2 w_con text-center " style="font-size:small;display: none;">
+											<a class="glyphicon glyphicon-plus" style="color: gray;"></a>
+											<a class="glyphicon glyphicon-trash" style="color: gray;"></a>
+											<a class="glyphicon glyphicon-download-alt" style="color: gray;"></a>
+										</div>
+										
+										<div class="col-xs-2 text-center"> 陈奕迅</div>
+										
+										<div class="col-xs-2 text-center"><a href="#">Star</a></div>
+									</div>
+								</li>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+
+								<li>
+									<div class="row w_song1">
+										<div class="col-xs-1" style="margin: 0 5px;;">3 
+											<a href="#" style="margin-left: 15px;">
+												<span class="glyphicon glyphicon-headphones" ></span>
+											</a></div>
+										<!--<span class="glyphicon glyphicon-headphones"></span>-->
+
+										<!--<div class="col-xs-1">
+											<a href="#">
+												<span class="glyphicon glyphicon-headphones"></span>
+											</a>
+										</div>-->
+										
+										<div class="col-xs-4">
+											<a href="">双影</a>
+											<a href="">
+												<span class="glyphicon glyphicon-facetime-video" style="padding-left: 7px;"></span>
+											</a>
+										</div>
+										
+										<div class="col-xs-2 w_time text-center" style="font-size:small;">04:36</div>
+										<div class="col-xs-2 w_con text-center " style="font-size:small;display: none;">
+											<a class="glyphicon glyphicon-plus" style="color: gray;"></a>
+											<a class="glyphicon glyphicon-trash" style="color: gray;"></a>
+											<a class="glyphicon glyphicon-download-alt" style="color: gray;"></a>
+										</div>
+										
+										<div class="col-xs-2 text-center"> 林俊杰</div>
+										
+										<div class="col-xs-2 text-center"><a href="#">Star</a></div>
+									</div>
+								</li>
+							</td>
+						</tr>
+						</table>
+					</ul>
+				</div>
+			</div>
+			
+		</div><!--//row-->
+	</div><!--container-->
+	</body>
+</html>
