@@ -5,16 +5,19 @@
 		<title></title>
 		<script src="js/jquery-1.9.1.min.js"></script>
     	<script src="js/bootstrap.min.js"></script>
-    	<script src="js/viewer.js"></script>
-  		<script src="js/main.js"></script>
     	<link href="css/bootstrap.min.css" rel="stylesheet"/>
-    	<link rel="stylesheet" href="css/viewer.css">
-  		<link rel="stylesheet" href="css/main.css">
-	</head>
+        <script src="js/kang_main.js"></script>
+        <script src="js/loading.js" defer="defer"></script>
+
+    </head>
 	<body>
+    <div id="header"></div>
+
+
 		<button class="btn btn-danger" data-toggle="modal" data-target="#loginModal">login</button>
 		<button class="btn btn-danger" data-toggle="modal" data-target="#registModal">regist</button>
-		<div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >
+
+	<from><div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >
 		  <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
 		    <div class="modal-content">
 		      <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
@@ -24,8 +27,8 @@
 		      <div class="modal-body">
 		        <!--<p>One fine body&hellip;</p>-->
 		        <div style="margin: 8px auto;width: 220px;height: 90px;">
-		        	<input class="form-control" style="margin-bottom: 10px;border-radius: 1px;" placeholder="请输入手机号"/>
-		        	<input class="form-control" style="border-radius: 1px;" placeholder="请输入密码"/>
+		        	<input class="form-control" style="margin-bottom: 10px;border-radius: 1px;" placeholder="请输入手机号" required="required"/>
+		        	<input class="form-control" style="border-radius: 1px;" placeholder="请输入密码" required="required"/>
 		        	
 		        </div>
 		      </div>
@@ -36,9 +39,9 @@
 		      </div>
 		    </div><!-- /.modal-content -->
 		  </div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-		
-		<div class="modal fade" tabindex="-1" role="dialog" id="registModal" >
+		</div><!-- /.modal --></from>
+
+  <form>  <div class="modal fade" tabindex="-1" role="dialog" id="registModal" >
 		  <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
 		    <div class="modal-content">
 		      <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
@@ -60,19 +63,7 @@
 		      </div>
 		    </div><!-- /.modal-content -->
 		  </div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-		<script>
-			function hideAndShow(kind){
-				if(kind == 1){
-					//show the login and hide the regist
-					$('#registModal').modal('hide');
-					$('#loginModal').modal('toggle');
-				}
-				else if(kind == 2){
-					$('#loginModal').modal('hide');
-					$('#registModal').modal('toggle');
-				}
-			}
-		</script>
-	</body>
+  </div><!-- /.modal --></form>
+
+    </body>
 </html>

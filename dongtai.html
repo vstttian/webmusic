@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>我的动态</title>
     <!--<script src="bootstrap4/js/jquery-1.9.1.min.js"></script>
     <script src="bootstrap4/js/bootstrap.min.js"></script>
     <link href="bootstrap4/css/bootstrap.min.css" rel="stylesheet">-->
@@ -15,7 +15,7 @@
     	<link rel="stylesheet" href="css/sb_viewer.css">
   		<link rel="stylesheet" href="css/sb_main.css">
 		<link rel="stylesheet" href="css/kang_main.css">
-
+		<script src="js/loading.js"defer="defer"></script>
     	<style>
     		.mycss{background-color: #FFFFFF;}
     		.mycss:hover{background-color: #f7f7f7}
@@ -23,11 +23,11 @@
     		.sb_dt_songimg_ze:hover{background:rgba(0,0,0,0)}
     		.addMusicBar:hover{background-color: #f7f7f7;}
     	</style>
-	<script>
-        $(function () {
-            $("#head").load("/webmusic/header.html");
-        })
-	</script>
+	<!--<script>-->
+        <!--$(function () {-->
+            <!--$("#header").load("/webmusic/header.html");-->
+        <!--})-->
+	<!--</script>-->
 	<style>
 		table{
 			table-layout: fixed;
@@ -38,9 +38,10 @@
 			text-overflow:ellipsis;
 		}
 	</style>
+
 </head>
 <body style="background-color: #f5f5f5">
-<div id="head"></div>
+<div id="header"></div>
 
 <!-- 登录模态框 -->
 <div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >

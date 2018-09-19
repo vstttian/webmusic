@@ -2,19 +2,19 @@
 <html lang="en" xmlns:text-indent="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>导航栏</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/kang_main.css">
-    <script src="js/kang_main.js" defer="defer"></script>
+    <script src="js/kang_main.js" ></script>
 
 
 </head>
 <body >
-<header >
+<header style="margin: 0 auto">
 
-    <nav class="navbar navbar-inverse" style="height:70px;z-index: 999">
+    <nav class="navbar navbar-inverse " style="height:70px;">
         <div class="container-fluid">
             <div class="navbar-header"><!--导航栏按钮-->
 
@@ -22,38 +22,91 @@
                 <a class="logo"  style=""
                    href="">Webmusic</a>
             </div>
-            <div class="cpllapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="cpllapse navbar-collapse" id="bs-example-navbar-collapse-1 ">
                 <ul class="nav navbar-nav" style="margin: 8px 35px 0 35px">
-                    <!-- <li class="dropdown" style="line-height:205px"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                     role="button" aria-haspopup="true" aria-expanded="false">发现音乐<span class="caret"></span></a>
-                     <ul class="dropdown-menu"><li><a href="#">推荐</a> </li>
-                         <li><a href="#">推荐</a> </li>
-                         <li><a href="">排行榜</a> </li>
-                         <li><a href="#">歌单</a> </li>
-                         <li><a href="#">歌手</a> </li>
-                     </ul>
 
-                     </li>-->
                     <li><a href="/webmusic/index.html">发现音乐</a></li>
                     <li><a href="/webmusic/wang/html/w_personMain.html">我的音乐</a></li>
                     <li><a href="/webmusic/dongtai.html">朋友</a> </li>
                 </ul>
                 <!--搜索框表单-->
-                <form class="navbar-form navbar-right" style="margin:13px  0px 0px 0px;float:left!important;">
+                <form class="navbar-form " style="margin:13px  0px 0px 200px;float:left!important;">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="音乐/用户">
                     </div>
                     <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                 </form>
                 <!--登录前-->
-                <ul class="nav navbar-nav navbar-right" style="margin:7px  260px 0px 0px;display: none " >
-                    <li><a href="#">登陆</a></li>
-                    <li><a href="#">注册</a></li>
+                <ul class="nav navbar-nav " style="margin:7px  0 0 0;float: left;display: block " >
+                    <!--<li><a id="login" href="#">登陆</a></li>-->
+                    <!--<li><a href="#">注册</a></li>-->
+                    <li>  <a class="" data-toggle="modal" data-target="#loginModal">登陆</a></li>
+                    <li>   <a class="" data-toggle="modal" data-target="#registModal">注册</a></li>>
+
+                   <form> <div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >
+                        <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
+                                    <h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">手机号登录</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <!--<p>One fine body&hellip;</p>-->
+                                    <div style="margin: 8px auto;width: 220px;height: 90px;">
+                                        <input class="form-control" style="margin-bottom: 10px;border-radius: 1px;" placeholder="请输入手机号" required="required"/>
+                                        <input class="form-control" style="border-radius: 1px;" placeholder="请输入密码" required="required"/>
+
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a style="float: left;margin-top: 10px;cursor: pointer;" onclick="hideAndShow(2)">去注册</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-primary">登录</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal --></form>
+
+                <form>  <div class="modal fade" tabindex="-1" role="dialog" id="registModal" >
+                        <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
+                                    <h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">手机号注册</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <!--<p>One fine body&hellip;</p>-->
+                                    <div style="margin: 8px auto;width: 220px;height: 90px;">
+                                        <input class="form-control" style="margin-bottom: 10px;border-radius: 1px;" placeholder="请输入手机号"/>
+                                        <input class="form-control" style="border-radius: 1px;" placeholder="请输入密码"/>
+
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a style="float: left;margin-top: 10px;cursor: pointer;" onclick="hideAndShow(1)" >去登录</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-primary">注册</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal --></form>
                 </ul>
+
+
+
+
                 </li>
                 </ul>
+
+
+
+
+
+
+
                 <!--登陆后-->
-                <div class="m-tophead f-pr j-tflag"   style="display: block;float: left;">
+                <div class="m-tophead f-pr j-tflag"   style="display: none;float: left;">
                     <div class="head f-fl f-pr myvia" id="myvia">
                         <img src="http://p1.music.126.net/y3PpxBSsVhEqYDtm4-RDUw==/528865129841813.jpg?param=30y30">
                     </div>
@@ -82,13 +135,13 @@
     </nav>
 
     <div  class="m-subnav" style="margin-top: -20px">
-        <ul class="nav" style="margin:0 0 0 245px;">
+        <ul class="nav" style="margin:0 0 0 420px;">
             <li><a hidefocus="true" data-module="discover" href="/webmusic/index.html" class="z-slt">推荐</a></li>
             <li><a hidefocus="true" data-module="toplist" href="/webmusic/wang/html/w_rank.html">排行榜</a></li>
             <li><a hidefocus="true" data-module="playlist" href="/webmusic/allsonglist.html">歌单</a></li>
-            <li><a hidefocus="true" data-module="djradio" href="/discover/djradio">主播电台</a></li>
+
             <li><a hidefocus="true" data-module="artist" href="/webmusic/songer.html">歌手</a></li>
-            <li><a hidefocus="true" data-module="album" href="/discover/album">新碟上架</a></li>
+            <li><a hidefocus="true" data-module="album" href="/webmusic/album.html">新碟上架</a></li>
         </ul></div>
 </header>
 
