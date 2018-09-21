@@ -17,4 +17,15 @@ function hideAndShow(kind){
         $('#loginModal').modal('hide');
         $('#registModal').modal('toggle');
     }
-}
+};
+$(document).ready(function () {
+    $('#login1').click(function () {
+
+
+        {
+            $('#loginModal').modal('hide')
+            $('#logining').css('display','none');
+            $('#logined').css('display','block');
+        }
+    })
+});
