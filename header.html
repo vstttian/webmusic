@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>导航栏</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="http://localhost:63342/webmusic/css/bootstrap.min.css">
+    <script src="http://localhost:63342/webmusic/js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="css/kang_main.css">
-    <script src="js/kang_main.js" defer="defer"></script>
+    <link rel="stylesheet" href="http://localhost:63342/webmusic/css/kang_main.css">
+    <script src="http://localhost:63342/webmusic/js/kang_main.js" defer="defer"></script>
 
 
 </head>
 <body >
-<header style="" z-index="999">
+<header style=" position:relative;z-index:999;width: 100%" >
     <!--加入（position:fixed;z-index: 999;width: 100%）可使导航栏随页面移动。-->
 
     <nav class="navbar navbar-inverse " style="height:70px;">
@@ -116,9 +116,8 @@
                     </div>
                     <a href="/user/home?id=" class=" f-hide">Always-与我常在</a>
 
-                    <div class="m-tlist m-tlist-lged  " id="playmyinfo" style="display: none; margin-top: -8px">
-                        <ul class="f-cb lb mg">
-                        <li><a hidefocus="true" class="" href="./user-tianhai/woDeZhuYe.html" style="color: #ece7e2;">
+                    <div class="m-tlist m-tlist-lged  " id="playmyinfo" style="display: none; margin-top: -8px"><ul class="f-cb lb mg">
+                        <li><a hidefocus="true" class="" href="/user/home?id=115548632" style="color: #ece7e2;">
                             <i class="itm-2"></i>我的主页</a></li>
                         <li><a href="/msg/#/at" class="" style="color: #ece7e2;">
                             <i class=""></i>我的消息<span class="m-topmsg f-pa f-hide j-uflag"></span></a></li>
@@ -126,11 +125,11 @@
                             <i class=""></i>我的等级</a></li>
                         <li><a href="/member" class="" style="color: #ece7e2;">
                             <i class=""></i>VIP会员</a></li>
-                        <li><a hidefocus="true" class="" href="./user-tianhai/XiuGaiGeRen.html" style="color: #ece7e2;">
+                        <li><a hidefocus="true" class="" href="/user/update" style="color: #ece7e2;">
                             <i class=""></i>个人设置</a></li>
                         <li><a hidefocus="true" class="" href="#" data-action="logout" onclick="exit()" style="color: #ece7e2;">
                             <i class=""  id="exited"  ></i>退出</a></li>
-                        </ul>
+                    </ul>
                     </div></div>
 
 
