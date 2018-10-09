@@ -5,14 +5,18 @@
     <title>导航栏</title>
     <link rel="stylesheet" href="http://localhost:63342/webmusic/css/bootstrap.min.css">
     <script src="http://localhost:63342/webmusic/js/jquery-1.9.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="http://localhost:63342/webmusic/js/bootstrap.js"></script>
+
     <link rel="stylesheet" href="http://localhost:63342/webmusic/css/kang_main.css">
     <script src="http://localhost:63342/webmusic/js/kang_main.js" defer="defer"></script>
+    <link rel="stylesheet" href="http://localhost:63342/webmusic/css/bootstrapValidator.min.css">
+    <script src="http://localhost:63342/webmusic/js/bootstrapValidator.min.js"></script>
 
 
 </head>
-<body >
-<header style=" position:relative;z-index:999;width: 100%" >
+<body class="">
+
+<header style=" position:relative;z-index:1080;width: 100%" >
     <!--加入（position:fixed;z-index: 999;width: 100%）可使导航栏随页面移动。-->
 
     <nav class="navbar navbar-inverse " style="height:70px;">
@@ -41,55 +45,63 @@
 
 
                 <!--登录前-->
-                <ul class="nav navbar-nav "  id="logining" style="margin:7px  0 0 0;float: left;display: none " >
+                <ul class="nav navbar-nav "  id="logining" style="margin:7px  0 0 0;float: left;display: block " >
                     <!--<li><a id="login" href="#">登陆</a></li>-->
                     <!--<li><a href="#">注册</a></li>-->
-                    <li>  <a class="" data-toggle="modal" data-target="#loginModal">登陆</a></li>
-                    <li>   <a class="" data-toggle="modal" data-target="#registModal">注册</a></li>
+                    <li>  <a class="" data-toggle="modal" data-target="#loginModal" >登陆</a></li>
+                    <li>   <a class="" data-toggle="modal" data-target="#registerModal">注册</a></li>
 
-                   <form> <div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >
+                    <!--登陆表单-->
+                   <form id="loginForm">
+                       <div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >
                         <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
-                            <div class="modal-content">
+                            <div class="modal-content" >
                                 <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
-                                    <h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">手机号登录</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
+                                    <h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">登录</h4>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body ">
                                     <!--<p>One fine body&hellip;</p>-->
-                                    <div style="margin: 8px auto;width: 220px;height: 90px;">
-                                        <input class="form-control" style="margin-bottom: 10px;border-radius: 1px;" placeholder="请输入手机号" />
-                                        <input class="form-control" style="border-radius: 1px;" placeholder="请输入密码" />
+                                    <div class="" style="margin: 8px auto;width: 220px;height: 90px;">
+                                        <div class="form-group"> <input class="form-control" type="text" name="account" style="margin-bottom: 10px;border-radius: 1px;" placeholder="请输入手机号" /></div>
+                                        <div class="form-group">  <input class="form-control" type="password" name="password" style="border-radius: 1px;"  placeholder="请输入密码" /></div>
 
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <a style="float: left;margin-top: 10px;cursor: pointer;" onclick="hideAndShow(2)">去注册</a>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">暂不登录</button>
-                                    <button type="submit" class="btn btn-primary" id="login1">登录</button>
+                                    <button type="submit" class="btn btn-primary"   id="">登录</button>
                                 </div>
                             </div><!-- /.modal-content -->
                         </div><!-- /.modal-dialog -->
                     </div><!-- /.modal --></form>
 
-                <form>  <div class="modal fade" tabindex="-1" role="dialog" id="registModal" >
+                <form id="registerForm">
+                    <div class="modal fade" tabindex="-1" role="dialog" id="registerModal" >
                         <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
-                            <div class="modal-content">
+                            <div class="modal-content" >
                                 <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
                                     <h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">手机号注册</h4>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body ">
                                     <!--<p>One fine body&hellip;</p>-->
-                                    <div style="margin: 8px auto;width: 220px;height: 90px;">
-                                        <input class="form-control" style="margin-bottom: 10px;border-radius: 1px;" placeholder="请输入手机号"/>
-                                        <input class="form-control" style="border-radius: 1px;" placeholder="请输入密码"/>
 
-                                    </div>
+
+                                    <div class="form-group"> 用户名  <input class="form-control" name="account" style="margin-bottom: 10px;border-radius: 10px;" placeholder="请输入手机号" /></div>
+                                    <div class="form-group"> 密码    <x-input class="form-control" name="password" type="password" style="margin-bottom: 10px;border-radius: 10px;"  placeholder="请输入密码"></x-input></div>
+                                    <div class="form-group"> 确认密码<input class="form-control" name="vpassword" type="password" style="margin-bottom: 10px;border-radius: 10px;" placeholder="请确认密码"/></div>
+                                    <div class="form-group"> 邮箱    <input class="form-control" name="email"  style="margin-bottom: 10px;border-radius: 10px;" placeholder="请输入邮箱"/></div>
+
+
                                 </div>
                                 <div class="modal-footer">
                                     <a style="float: left;margin-top: 10px;cursor: pointer;" onclick="hideAndShow(1)" >去登录</a>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="reset" class="btn btn-primary">重置信息</button>
                                     <button type="submit" class="btn btn-primary">注册</button>
                                 </div>
                             </div><!-- /.modal-content -->
@@ -110,7 +122,7 @@
 
 
                 <!--登陆后-->
-                <div class="m-tophead f-pr j-tflag"  id="logined" style="display: block;float: left;">
+                <div class="m-tophead f-pr j-tflag"  id="logined" style="display: none;float: left;">
                     <div class="head f-fl f-pr myvia" id="myvia">
                         <img src="http://p1.music.126.net/y3PpxBSsVhEqYDtm4-RDUw==/528865129841813.jpg?param=30y30">
                     </div>
@@ -137,7 +149,7 @@
             </div>
         </div>
     </nav>
-
+<!--红色导航栏-->
     <div  class="m-subnav" style="margin-top: -20px">
         <ul class="nav" style="margin:0 0 0 420px;">
             <li><a hidefocus="true" data-module="discover" href="/webmusic/index.html" class="z-slt">推荐</a></li>
@@ -151,24 +163,24 @@
 
 
 <script>
-    $(document).ready(function () {
-        $('#login1').click(function () {
+//     $(document).ready(function () {
+//         $('#login1').click(function () {
+//
+//
+//         {
+//             // $('#loginModal').modal('hide');
+//             $('#logining').css('display','none');
+//             $('#logined').css('display','block');
+//         }
+//         })
+//     });
+// function exit(){
+//         var ling=document.getElementById('logining');
+//         var led=document.getElementById('logined');
+//         ling.style.display='block';
+//         led.style.display='none';
+//     }
 
-
-        {
-            $('#loginModal').modal('hide')
-            $('#logining').css('display','none');
-            $('#logined').css('display','block');
-        }
-        })
-    });
-
-function exit(){
-    var ling=document.getElementById('logining');
-    var led=document.getElementById('logined');
-    ling.style.display='block';
-    led.style.display='none';
-}
 
 </script>
 

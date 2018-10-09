@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/kang_main.css">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/kang_main.js" defer="defer"></script>
+    <script src="js/loading.js"defer="defer"></script>
+</head>
+<body >
+<div id="header"></div>
+
+<div style="margin: 0 auto 0 auto ;width: 980px; height:auto;background-color: #fcfdf8 ">
+    <div  style="background: url(img/login.jpg) no-repeat;width: 980px; height: 700px; padding: 20px 0 0 0;border:solid;border-width: 0 1px 0 1px;border-color: #d3d3d3 ">
+        <div class="pull-right" style="width: 470px;margin-top: 310px">
+        <button class="btn btn-danger center-block btn-group btn-group-lg" role="group" data-toggle="modal" data-target="#loginModal">用户登录</button>
+        <form> <div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >
+            <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #2d2d2d;height: 39px;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font-weight: 500;color: #FFFFFF">&times;</span></button>
+                        <h4 class="modal-title" style="color: white;font-size: 14px;font-weight: bold;">手机号登录</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!--<p>One fine body&hellip;</p>-->
+                        <div style="margin: 8px auto;width: 220px;height: 90px;">
+                            <input class="form-control" style="margin-bottom: 10px;border-radius: 1px;" placeholder="请输入手机号" required="required"/>
+                            <input class="form-control" style="border-radius: 1px;" placeholder="请输入密码" required="required"/>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a style="float: left;margin-top: 10px;cursor: pointer;" onclick="hideAndShow(2)">去注册</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary">登录</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal --></form>
+        </div>
+    </div>
+    </div>
+</div>
+<div id="footer"></div>
+</body>
+</html>
