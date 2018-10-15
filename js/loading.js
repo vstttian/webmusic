@@ -1,3 +1,4 @@
 
-$("#header").load("/webmusic/header.html");
-$('#footer').load("/webmusic/base.html");
+// $("#header").load("/webmusic/header.html");
+// $('#footer').load("/webmusic/base.html");
+

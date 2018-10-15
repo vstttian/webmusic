@@ -6,26 +6,27 @@
 		<link rel="stylesheet" type="text/css" href="../css/wang.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/kang_main.css">
 		<script src="../../js/jquery-1.9.1.min.js" ></script>
-		<script  src="../../js/bootstrap.min.js" ></script>
+		<!--<script  src="../../js/bootstrap.min.js" ></script>-->
 		<script  src="../js/wang.js"></script>
-
-		<script src="../../js/loading.js" defer="defer" ></script>
+		<!--<script src="../../js/kang_main.js"defer="defer"></script>-->
 
 		<title></title>
-<<<<<<< Updated upstream
-		<script src="../../js/kang_main.js"defer="defer"></script>
-=======
 
 
->>>>>>> Stashed changes
+
 
 	</head>
 
 	<body style="background: RGB(245,245,245);">
 
+
 	<!--子康-->
 
 		<div id="header"></div>
+	<script>
+        $("#header").load("/webmusic/header.html");
+
+	</script>
 	<!--子康-->
 
 		<div class="container">
@@ -310,5 +311,9 @@
 			
 		</div><!--//row-->
 	</div><!--container-->
+    <div id="footer"></div>
+    <script>
+        $('#footer').load("/webmusic/base.html");
+    </script>
 	</body>
 </html>

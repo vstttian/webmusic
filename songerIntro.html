@@ -7,10 +7,9 @@
     <script src="bootstrap4/js/bootstrap.min.js"></script>
     <link href="bootstrap4/css/bootstrap.min.css" rel="stylesheet">-->
     <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!--<script src="js/bootstrap.min.js"></script>-->
     <script src="js/sb_viewer.js"></script>
     <script src="js/sb_main.js"></script>
-    <script src="js/kang_main.js" defer="defer"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/sb_viewer.css">
     <link rel="stylesheet" href="css/sb_main.css">
@@ -23,17 +22,14 @@
         .sb_dt_songimg_ze:hover{background:rgba(0,0,0,0)}
         .addMusicBar:hover{background-color: #f7f7f7;}
     </style>
-    <script src="js/loading.js" defer="defer"></script>
-    <!--<script>-->
-        <!--$(function () {-->
-            <!--$("#head").load("/webmusic/header.html");-->
-            <!--$("#singerIntroKuai").load("/webmusic/wang/html/w_person.html");-->
-        <!--})-->
 
-    <!--</script>-->
 </head>
 <body style="background-color: #f5f5f5">
 <div id="header"></div>
+<script>
+    $("#header").load("/webmusic/header.html");
+
+</script>
 
 <!-- 登录模态框 -->
 <div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >

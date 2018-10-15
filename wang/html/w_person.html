@@ -5,27 +5,30 @@
 		<title>歌手</title>
 		<link rel="stylesheet" type="text/css" href="/webmusic/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="/webmusic/wang/css/wang.css" />
-		<script type="text/javascript" src="/webmusic/js/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="/webmusic/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="/webmusic/wang/js/wang.js"></script>
-		<script src="../../js/loading.js" defer="defer"></script>
 		<link rel="stylesheet" href="../../css/kang_main.css">
+		<script type="text/javascript" src="/webmusic/js/jquery-1.9.1.min.js"></script>
+		<!--<script type="text/javascript" src="/webmusic/js/bootstrap.min.js"></script>-->
+		<script type="text/javascript" src="/webmusic/wang/js/wang.js"></script>
+
 
 	</head>
 	<body style="background: RGB(245,245,245);">
 		
 			<div id="header"></div>
-		<!--头部-->
+			<script>
+                $("#header").load("/webmusic/header.html");
 
-		<div class="container w_main" style="">
-			<div class="row">
-				<div class=col-md-8 w_border">
-					
-						
-					<!--名字-->
-					<div class="w_name">
-						<h2>张惠妹<small style="padding-left: 15px;">aMEI;阿密特</small></h2>
-					</div>
+			</script>
+
+			<!--头部-->
+            <div class="container w_main" style="border:solid;border-width: 0 1px 0 1px;border-color: #d3d3d3;width: 980px;">
+                <div class="row">
+                    <div class='col-md-8 ' style="padding-left:0px">
+
+                        <!--名字-->
+                        <div class="w_name" style="padding-top: 0px ">
+                            <h2>张惠妹<small style="padding-left: 15px;">aMEI;阿密特</small></h2>
+                        </div>
 					
 					<!--照片-->
 					<div class="w_img" style="width:640px;height: 300px;position: absolute;">
@@ -41,7 +44,7 @@
 					</div>
 					
 					<!--导航条-->
-					<div class="w_nav">
+                        <div class="w_nav" style="padding: 30px 0;">
 						<ul class="nav nav-tabs">
 						  <li role="presentation"><a href="singer.html">热门作品</a></li>
 						  <li role="presentation"><a href="w_album.html">所哟专辑</a></li>
@@ -59,13 +62,13 @@
 				</div>
 				
 				<!--公共部分-->
-				<div class="col-md-4">
-					<div style="float: right;width:300px;border: 1px solid #d3d3d3;border-bottom: 0px; padding: 0px 1px;">
-						<div style="height: 193px;width: 100%;background-color: #f6f6f6;background: url(img/backgroundSelf.png) no-repeat 0 0; ">
-							<div style="width: 100%;height: 193px;padding-top: 38px;padding-left: 30px;padding-bottom: 20px;">
-								<div class="media">
+                    <div class="col-md-4" style="padding-right: 0px">
+                        <div style="float: right;width:300px;border: 1px solid #d3d3d3;border-bottom: 0px;border-right: 0px;border-left: 0px; padding: 0px 1px;">
+                            <div style="height: 193px;width: 100%;background-color: #f6f6f6;background: url(../../img/backgroundSelf.png) no-repeat 0 0; ">
+                                <div style="width: 100%;height: 193px;padding-top: 38px;padding-left: 30px;padding-bottom: 20px;">
+                                <div class="media">
 									<div class="media-left">
-										<img src="img/109951163547149452.jpg" class="thumbnail" style="padding: 2px;border-radius: 0px;width: 68px;height: 68px;"/>
+										<img src="../../img/109951163547149452.jpg" class="thumbnail" style="padding: 2px;border-radius: 0px;width: 68px;height: 68px;"/>
 									</div>
 									<div class="media-body">
 										<div class="media-heading">
@@ -109,7 +112,7 @@
 										<li style="float: left;margin-top: 15px;">
 											<div class="media">
 												<div class="media-left">
-													<img src="img/109951163547149452.jpg" width="45" height="45">
+													<img src="../../img/109951163547149452.jpg" width="45" height="45">
 												</div>
 												<div class="media-body">
 													<div class="media-heading"><a href="#" style="color: #333;">郭采洁</a> </div>
@@ -124,7 +127,7 @@
 										<li style="float: left;margin-top: 15px;">
 											<div class="media">
 												<div class="media-left">
-													<img src="img/s_img/g14.jpg" width="45" height="45">
+													<img src="../../img/s_img/g14.jpg" width="45" height="45">
 												</div>
 												<div class="media-body">
 													<div class="media-heading"><a href="#" style="color: #333;">苏乞儿</a> </div>
@@ -145,5 +148,9 @@
 			</div>
 
 		</div>
+            <div id="footer"></div>
+            <script>
+                $('#footer').load("/webmusic/base.html");
+            </script>
 	</body>
 </html>

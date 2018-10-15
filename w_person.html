@@ -8,19 +8,22 @@
 		<script type="text/javascript" src="/webmusic/js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="/webmusic/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="/webmusic/wang/js/wang.js"></script>
-        <script src="js/kang_main.js" defer="defer"></script>
-		<script src="js/loading.js" defer="defer"></script>
+        <!--<script src="js/kang_main.js" defer="defer"></script>-->
+		<!--<script src="js/loading.js" defer="defer"></script>-->
 
 
 	</head>
 	<body style="background: RGB(245,245,245);">
 
 	<div id="header"></div>
-		<!--头部-->
+	<script>
+        $("#header").load("/webmusic/header.html");
+	</script>
+	<!--头部-->
 
 		<div class="container w_main" style="border:solid;border-width: 0 1px 0 1px;border-color: #d3d3d3;width: 980px;">
 			<div class="row">
-				<div class=col-md-8 w_border" style="padding-left:0px">
+				<div class='col-md-8 ' style="padding-left:0px">
 					
 						
 					<!--名字-->
@@ -45,8 +48,8 @@
 					<div class="w_nav" style="padding: 30px 0;">
 						<ul class="nav nav-tabs">
 						  <li role="presentation"><a href="/webmusic/wang/html/singer.html">热门作品</a></li>
-						  <li role="presentation"><a href="w_album.html">所哟专辑</a></li>
-						  <li role="presentation"><a href="w_mv.html">相关MV</a></li>
+						  <li role="presentation"><a href="/webmusic/wang/html/w_album.html">所哟专辑</a></li>
+						  <li role="presentation"><a href="/webmusic/wang/html/w_mv.html">相关MV</a></li>
 						  <li role="presentation"class="active"><a href="w_person.html">艺人介绍</a></li>
 						</ul>
 					</div>
@@ -63,7 +66,7 @@
 				<div class="col-md-4" style="padding-right: 0px">
 					<div style="float: right;width:300px;border: 1px solid #d3d3d3;border-bottom: 0px;border-right: 0px;border-left: 0px; padding: 0px 1px;">
 						<div style="height: 193px;width: 100%;background-color: #f6f6f6;background: url(img/backgroundSelf.png) no-repeat 0 0; ">
-							<div style="width: 100%;height: 193px;padding-top: 38px;padding-left: 30px;padding-bottom: 20px;">
+                            <div style="width: 100%;height: 193px;padding-top: 38px;padding-left: 30px;padding-bottom: 20px;">
 								<div class="media">
 									<div class="media-left">
 										<img src="img/109951163547149452.jpg" class="thumbnail" style="padding: 2px;border-radius: 0px;width: 68px;height: 68px;"/>
@@ -148,7 +151,9 @@
 
 			</div>
 		</div>
-	<div id="footer"></div>
-
+    <div id="footer"></div>
+    <script>
+        $('#footer').load("/webmusic/base.html");
+    </script>
 	</body>
 </html>

@@ -1,42 +1,34 @@
 
 
-
-
+//当鼠标移到头像上时显示下拉列表
 $("#myvia,#playmyinfo").mouseenter(function(){
     $("#playmyinfo").css("display","block");});
 
 $("#myvia,#playmyinfo").mouseleave(function(){
     $("#playmyinfo").css("display","none");});
-
-
-function hideAndShow(kind){
-    if(kind == 1){
-        //show the login and hide the regist
-        $('#registerModal').modal('hide');
-        $('#loginModal').modal('toggle');
-    }
-    else if(kind == 2){
-        $('#loginModal').modal('hide');
-        $('#registerModal').modal('toggle');
-    }
-};
+// function hideAndShow(kind){
+//     if(kind == 1){
+//         //show the login and hide the regist
+//         $(".modal-backdrop").remove();//删除class值为modal-backdrop的标签，可去除阴影
+//         $('#registerModal').modal('hide');
+//         $('#loginModal').modal('toggle');
+//     }
+//     else if(kind == 2){
+//         $(".modal-backdrop").remove();//删除class值为modal-backdrop的标签，可去除阴影
+//         $('#loginModal').modal('hide');
+//         $('#registerModal').modal('toggle');
+//     }
+// };
 
 // $(document).ready(function () {
 //     $('#login1').click(function () {
-//
-//
 //         {
-//
 //             $('#logining').css('display','none');
 //             $('#logined').css('display','block');
 //         }
 //     })
 // });
-// $("#login1").click(function(){
-//     $("#my-modal-alert").modal("toggle");
-//
-//     $(".modal-backdrop").remove();//删除class值为modal-backdrop的标签，可去除阴影
-// });
+//模拟用户退出
 function exit(){
     var ling=document.getElementById('logining');
     var led=document.getElementById('logined');
@@ -46,6 +38,7 @@ function exit(){
 //登录表单验证
 $(function () {
     $('#loginForm').bootstrapValidator({
+        // live:'disable',
         //验证成功显示的图标
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -92,12 +85,15 @@ $(function () {
                     }
                 }
             }
-        } //校验失败时，默认阻止提交，校验成功，默认提交
-        //组织默认提交方式，改用ajax提交方式
+        }
     })
+        //校验失败时，默认阻止提交，校验成功，默认提交
+        //组织默认提交方式，改用ajax提交方式
         .on('success.form.bv', function (e) {
+            console.log("hello");
             //阻止浏览器默认行为
             e.preventDefault();
+            // console.log('完成了');
             var $form = $(e.target);
             //发送登录信息
             $.ajax({
@@ -106,6 +102,10 @@ $(function () {
                 //传递的数据格式  对象  序列化后的数据 key=value的字符串例如[{'account'：'13610118382','password':'123456'}]
                 data: $form.serialize(),
                 dataType: 'json',
+                async: true,
+                complete: function (msg) {
+                    console.log('完成了');
+                },
                 success: function (data) {
                     //响应成功后的逻辑
                     if (data.success) {
@@ -121,20 +121,21 @@ $(function () {
                             $form.data('bootstrapValidator').updateStatus('password', 'INVALID', 'callback')
                         }
                     }
-
-
-                }
+                },
+                error: function() {
+                console.log("fucking error")
+            }
             });
-
-        });
 });
+});
+//注册验证
 $(function () {
     $('#registerForm').bootstrapValidator({
-        feedbackIcons:{
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
+        // feedbackIcons:{
+        //     valid: 'glyphicon glyphicon-ok',
+        //     invalid: 'glyphicon glyphicon-remove',
+        //     validating: 'glyphicon glyphicon-refresh'
+        // },
         fields:{
             //验证手机号
             account:{
@@ -195,12 +196,15 @@ $(function () {
 
     }).on('success.form.bv',function(f){
         f.preventDefault();
+        // $('#logining').css('display','none');//测试用
+        // $('#logined').css('display','block');//测试用
         var $form=$(f.target);
         $.ajax({
             type:'post',
             url:'user/userRegister',
             data:$form.serialize(),
             dataType:'json',
+            async: true,
             success:function (data) {
                 if(data.success){
                     location.href='/index.html';
@@ -218,6 +222,11 @@ $(function () {
             }
         })
     })
+
+
+});
+$(function () {
+
 
 
 })

@@ -5,9 +5,9 @@
 		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/wang.css" />
 		<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+		<!--<script type="text/javascript" src="../../js/bootstrap.min.js"></script>-->
 		<script type="text/javascript" src="../js/wang.js"></script>
-		<script src="../../js/loading.js" defer="defer"></script>
+
 		<link rel="stylesheet" href="../../css/kang_main.css">
 		<title></title>
 	</head>
@@ -17,6 +17,11 @@
 	<!--子康-->
 
 		<div id="header"></div>
+	<script>
+        $("#header").load("/webmusic/header.html");
+
+	</script>
+
 	<!--子康-->
 
 		<div class="container">
@@ -383,6 +388,9 @@
 			
 		</div><!--//row-->
 	</div><!--container-->
-
+    <div id="footer"></div>
+    <script>
+        $('#footer').load("/webmusic/base.html");
+    </script>
 	</body>
 </html>
