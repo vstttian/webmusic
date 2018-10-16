@@ -38,7 +38,7 @@ function exit(){
 //登录表单验证
 $(function () {
     $('#loginForm').bootstrapValidator({
-        // live:'disable',
+        live:'disable',
         //验证成功显示的图标
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -90,7 +90,7 @@ $(function () {
         //校验失败时，默认阻止提交，校验成功，默认提交
         //组织默认提交方式，改用ajax提交方式
         .on('success.form.bv', function (e) {
-            console.log("hello");
+            console.log('456');
             //阻止浏览器默认行为
             e.preventDefault();
             // console.log('完成了');
@@ -104,7 +104,7 @@ $(function () {
                 dataType: 'json',
                 async: true,
                 complete: function (msg) {
-                    console.log('完成了');
+
                 },
                 success: function (data) {
                     //响应成功后的逻辑
@@ -123,7 +123,8 @@ $(function () {
                     }
                 },
                 error: function() {
-                console.log("fucking error")
+                console.log("fucking error");
+                    location.href = '/webmusic/index.html';
             }
             });
 });

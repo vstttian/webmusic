@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="/webmusic/css/bootstrap.min.css">
     <link rel="stylesheet" href="/webmusic/css/kang_main.css">
     <link rel="stylesheet" href="/webmusic/css/bootstrapValidator.min.css">
-    <!--<script type="text/javascript" src="/webmusic/js/jquery-1.9.1.min.js"></script>-->
+    <script type="text/javascript" src="/webmusic/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="/webmusic/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/webmusic/js/bootstrapValidator.min.js" defer="defer"></script>
+    <script  type="text/javascript" src="/webmusic/js/bootstrapValidator.js"></script>
     <script type="text/javascript" src="/webmusic/js/kang_main.js"  defer="defer"></script>
 
 
@@ -44,14 +44,14 @@
 
 
                 <!--登录前-->
-                <ul class="nav navbar-nav "  id="logining" style="margin:7px  0 0 0;float: left;display: none " >
+                <ul class="nav navbar-nav "  id="logining" style="margin:7px  0 0 0;float: left;display: block " >
                     <!--<li><a id="login" href="#">登陆</a></li>-->
                     <!--<li><a href="#">注册</a></li>-->
                     <li>  <a class="" data-toggle="modal" data-target="#loginModal" >登陆</a></li>
                     <li>   <a class="" data-toggle="modal" data-target="#registerModal">注册</a></li>
 
                     <!--登陆表单-->
-                   <form id="loginForm" method="post">
+                   <form id="loginForm">
                        <div class="modal fade" tabindex="-1" role="dialog" id="loginModal" >
                         <div class="modal-dialog" role="document" style="margin: 10% auto;width: 530px;">
                             <div class="modal-content" >
@@ -121,7 +121,7 @@
 
 
                 <!--登陆后-->
-                <div class="m-tophead f-pr j-tflag"  id="logined" style="display: block;float: left;">
+                <div class="m-tophead f-pr j-tflag"  id="logined" style="display: none;float: left;">
                     <div class="head f-fl f-pr myvia" id="myvia">
                         <img src="http://p1.music.126.net/y3PpxBSsVhEqYDtm4-RDUw==/528865129841813.jpg?param=30y30">
                     </div>
@@ -162,7 +162,7 @@
 
 
 <script>
-    
+
 </script>
 
 </body>
